@@ -66,6 +66,14 @@ GIT
     spree_cash_on_delivery (3.0.3)
 
 GIT
+  remote: https://github.com/oscar6654/spree_admin_roles_and_access.git
+  revision: 82ec43781b5a426e766e12cd1d6cb9ca6221c747
+  specs:
+    spree_admin_roles_and_access (3.2.1.beta)
+      spree_auth_devise
+      spree_core
+
+GIT
   remote: https://github.com/vinsol-spree-contrib/spree-html-invoice.git
   revision: 11d642c791c369c83cc361bc241b0739e851c3ba
   branch: 3-2-stable
@@ -518,6 +526,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   shoulda-matchers
   spree (~> 3.2.7)
+  spree_admin_roles_and_access!
   spree_auth_devise (~> 3.3)
   spree_better_terms_and_conditions!
   spree_cash_on_delivery!

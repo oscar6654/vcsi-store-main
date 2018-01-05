@@ -13,3 +13,5 @@
 // require spree/frontend/spree_themes
 //= require spree/frontend/spree_paypal_express
 //= require spree/frontend/spree_better_terms_and_conditions
+
+//= require spree/frontend/spree_admin_roles_and_access

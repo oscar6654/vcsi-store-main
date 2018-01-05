@@ -20,6 +20,7 @@ gem 'aws-sdk', '~> 2.6', '>= 2.6.48'
 gem 'spree_better_terms_and_conditions', git: 'https://github.com/jamatthews/spree_better_terms_and_conditions.git', branch: 'master'
 gem 'spree_cash_on_delivery', :git => 'https://github.com/mzegarek/spree_cash_on_delivery.git', branch: 'master'
 gem 'spree_html_invoice', git: 'https://github.com/vinsol-spree-contrib/spree-html-invoice.git', branch: '3-2-stable'
+gem 'spree_admin_roles_and_access', git: 'https://github.com/oscar6654/spree_admin_roles_and_access.git'
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'

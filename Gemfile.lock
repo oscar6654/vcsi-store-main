@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/oscar6654/datashift_spree.git
+  revision: b0bd3828aa4952461189771067f530487b8565f7
+  branch: 3-2-stable
+  specs:
+    datashift_spree (0.6.0)
+      datashift
+      mechanize (~> 2.6, >= 2.6.0)
+      rails
+
+GIT
   remote: git://github.com/spree-contrib/better_spree_paypal_express.git
   revision: f62b408d97f747f8bf07f04790eaa2dd08443e4b
   specs:
@@ -29,16 +39,6 @@ GIT
       spreadsheet (~> 1.1)
       thor (~> 0.19.1)
       thread_safe (~> 0.3, >= 0.3)
-
-GIT
-  remote: git://github.com/vinsol-spree-contrib/datashift_spree.git
-  revision: eda9a4c9cee8b78e511cf769e8512571f04518fa
-  branch: 3-2-stable
-  specs:
-    datashift_spree (0.6.0)
-      datashift
-      mechanize (~> 2.6, >= 2.6.0)
-      rails (>= 4.2, < 5.1)
 
 GIT
   remote: git://github.com/vinsol-spree-contrib/spree_datashift_prod_import.git

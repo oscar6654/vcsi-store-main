@@ -1,0 +1,27 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require spree/frontend
+
+ *= require_self
+ *= require_tree .
+ *= require spree/frontend/spree_datashift_prod_import
+ * require spree/frontend/spree_themes
+ *= require spree/frontend/spree_paypal_express
+ *= require spree/frontend/spree_better_terms_and_conditions
+*/
+
+.terms_and_conditions_box {
+  padding: 15px;
+  margin-bottom: 15px;
+  background: #f7f7f7;
+}
+.terms_and_conditions_text {
+  padding: 20px;
+  margin: 15px 0;
+  height: 250px;
+  overflow: auto;
+  background: #fff;
+}

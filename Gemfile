@@ -3,10 +3,23 @@ source 'https://rubygems.org/'
 gem 'rails', '~> 5.0.0'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
+gem 'rails-ujs'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'coffee-rails'
+gem 'spree', '~> 3.2.7'
+gem 'spree_auth_devise', '~> 3.3'
+gem 'spree_gateway', '~> 3.3'
+gem 'spree_datashift_prod_import', github: 'vinsol-spree-contrib/spree_datashift_prod_import', branch: '3-2-stable'
+gem 'datashift_spree', github: 'vinsol-spree-contrib/datashift_spree', branch: '3-2-stable'
+gem 'datashift', github: 'vinsol-spree-contrib/datashift', branch: '3-2-stable'
+gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'
+gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings'
+gem 'aws-sdk', '~> 2.6', '>= 2.6.48'
+gem 'spree_better_terms_and_conditions', git: 'https://github.com/jamatthews/spree_better_terms_and_conditions.git', branch: 'master'
+gem 'spree_cash_on_delivery', :git => 'https://github.com/mzegarek/spree_cash_on_delivery.git', branch: 'master'
+gem 'spree_html_invoice', git: 'https://github.com/vinsol-spree-contrib/spree-html-invoice.git', branch: '3-2-stable'
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
@@ -17,6 +30,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy', require: false
   gem 'pry-rails'
+  gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda-matchers', require: false
   gem 'valid_attribute'
@@ -25,5 +39,5 @@ end
 group :production do
   gem 'rails_12factor'
 end
-
+gem 'sprockets-helpers', '~> 1.2.1'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

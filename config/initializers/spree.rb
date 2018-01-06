@@ -16,9 +16,9 @@ Spree.config do |config|
   config.currency = "PHP"
   config.allow_guest_checkout = false
   # Custom logo for the frontend
-  config.logo = "logo/solidus_logo.png"
+  config.logo = "logo/vcsi.png"
   # Custom logo for the admin
-  config.admin_interface_logo = "logo/solidus_logo.png"
+  config.admin_interface_logo = "logo/vcsi.png"
 end
 
 Spree.user_class = "Spree::User"

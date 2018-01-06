@@ -22,6 +22,7 @@ gem 'spree_cash_on_delivery', :git => 'https://github.com/mzegarek/spree_cash_on
 gem 'spree_html_invoice', git: 'https://github.com/vinsol-spree-contrib/spree-html-invoice.git', branch: '3-2-stable'
 gem 'spree_admin_roles_and_access', git: 'https://github.com/oscar6654/spree_admin_roles_and_access.git'
 gem 'spree-bank-transfer', require: 'spree_bank_transfer', github: 'oscar6654/spree_bank_transfer', branch: '3-2-updated'
+gem 'spree_print_invoice', github: 'oscar6654/spree_print_invoice', branch: 'master'
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'

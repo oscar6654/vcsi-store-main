@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105085153) do
+ActiveRecord::Schema.define(version: 20180106095328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,6 +98,19 @@ ActiveRecord::Schema.define(version: 20180105085153) do
     t.text     "additional_details"
     t.index ["active"], name: "index_spree_banks_on_active", using: :btree
     t.index ["name", "account_no"], name: "index_spree_banks_on_name_and_account_no", unique: true, using: :btree
+  end
+
+  create_table "spree_bookkeeping_documents", force: :cascade do |t|
+    t.string   "printable_type"
+    t.integer  "printable_id"
+    t.string   "template"
+    t.string   "number"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "email"
+    t.decimal  "total",          precision: 12, scale: 2
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
   end
 
   create_table "spree_calculators", force: :cascade do |t|

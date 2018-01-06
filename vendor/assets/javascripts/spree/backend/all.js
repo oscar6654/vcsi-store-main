@@ -15,3 +15,5 @@
 //= require spree/backend/spree_better_terms_and_conditions
 
 //= require spree/backend/spree_admin_roles_and_access
+
+//= require spree/backend/spree_bank_transfer

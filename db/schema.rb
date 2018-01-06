@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105030028) do
+ActiveRecord::Schema.define(version: 20180105085153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,17 @@ ActiveRecord::Schema.define(version: 20180105030028) do
     t.index ["position"], name: "index_spree_assets_on_position", using: :btree
     t.index ["viewable_id"], name: "index_assets_on_viewable_id", using: :btree
     t.index ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type", using: :btree
+  end
+
+  create_table "spree_banks", force: :cascade do |t|
+    t.string   "name"
+    t.string   "account_no"
+    t.boolean  "active",             default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "additional_details"
+    t.index ["active"], name: "index_spree_banks_on_active", using: :btree
+    t.index ["name", "account_no"], name: "index_spree_banks_on_name_and_account_no", unique: true, using: :btree
   end
 
   create_table "spree_calculators", force: :cascade do |t|
@@ -319,7 +330,7 @@ ActiveRecord::Schema.define(version: 20180105030028) do
   end
 
   create_table "spree_payments", force: :cascade do |t|
-    t.decimal  "amount",               precision: 10, scale: 2, default: "0.0", null: false
+    t.decimal  "amount",                   precision: 10, scale: 2, default: "0.0", null: false
     t.integer  "order_id"
     t.string   "source_type"
     t.integer  "source_id"
@@ -327,11 +338,15 @@ ActiveRecord::Schema.define(version: 20180105030028) do
     t.string   "state"
     t.string   "response_code"
     t.string   "avs_response"
-    t.datetime "created_at",                                                    null: false
-    t.datetime "updated_at",                                                    null: false
+    t.datetime "created_at",                                                        null: false
+    t.datetime "updated_at",                                                        null: false
     t.string   "number"
     t.string   "cvv_response_code"
     t.string   "cvv_response_message"
+    t.string   "bank_name"
+    t.string   "account_no"
+    t.string   "transaction_reference_no"
+    t.date     "deposited_on"
     t.index ["number"], name: "index_spree_payments_on_number", using: :btree
     t.index ["order_id"], name: "index_spree_payments_on_order_id", using: :btree
     t.index ["payment_method_id"], name: "index_spree_payments_on_payment_method_id", using: :btree

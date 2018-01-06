@@ -12,6 +12,9 @@
  *= require spree/frontend/spree_paypal_express
  *= require spree/frontend/spree_better_terms_and_conditions
  *= require spree/frontend/spree_admin_roles_and_access
+ * require spree/frontend/spree_bank_transfer
+ *= require jquery-ui
+ *= require jquery-ui/datepicker
 */
 
 .terms_and_conditions_box {
@@ -26,3 +29,14 @@
   overflow: auto;
   background: #fff;
 }
+
+.ui-datepicker {
+  width: 18em; /* fix calendar width */
+  padding: .2em .2em 0;
+}
+
+/* .bt_payment_form { margin-left: -10px; } */
+/* .bt_payment_form table { border-collapse: inherit; } */
+/* .bt_payment_form [type="submit"] { margin-left: 10px; } */
+/* .bt_payment_form input[type="text"], .bt_payment_form input[type="date"] { width: 138px; } */
+/* .hidden { display: none; } */

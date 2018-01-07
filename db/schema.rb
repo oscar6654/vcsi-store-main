@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180106095328) do
+ActiveRecord::Schema.define(version: 20180107015942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -777,6 +777,34 @@ ActiveRecord::Schema.define(version: 20180106095328) do
     t.index ["selected"], name: "index_spree_shipping_rates_on_selected", using: :btree
     t.index ["shipment_id", "shipping_method_id"], name: "spree_shipping_rates_join_index", unique: true, using: :btree
     t.index ["tax_rate_id"], name: "index_spree_shipping_rates_on_tax_rate_id", using: :btree
+  end
+
+  create_table "spree_slide_locations", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "spree_slide_slide_locations", force: :cascade do |t|
+    t.integer "slide_id"
+    t.integer "slide_location_id"
+    t.index ["slide_id"], name: "index_spree_slide_slide_locations_on_slide_id", using: :btree
+    t.index ["slide_location_id"], name: "index_spree_slide_slide_locations_on_slide_location_id", using: :btree
+  end
+
+  create_table "spree_slides", force: :cascade do |t|
+    t.string   "name"
+    t.text     "body"
+    t.string   "link_url"
+    t.boolean  "published"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "position",           default: 0, null: false
+    t.integer  "product_id"
   end
 
   create_table "spree_state_changes", force: :cascade do |t|

@@ -1,3 +1,8 @@
+
+<% slides = Spree::Slide.published %>
+<%= render partial: 'spree/shared/slider', locals: { slider: slides } %>
+
+<br/>
 <% @body_id = 'home-page' %>
 
 <% content_for :sidebar do %>
@@ -13,4 +18,3 @@
     <%= render partial: 'spree/shared/products', locals: { products: @products } %>
   <% end %>
 </section>
-

@@ -21,6 +21,7 @@
           <%= breadcrumbs(@taxon) %>
 
           <div class="row body-content-row">
+
             <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
 
             <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>

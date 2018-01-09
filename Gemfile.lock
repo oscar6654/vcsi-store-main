@@ -100,14 +100,6 @@ GIT
       spree_auth_devise
       spree_core
 
-GIT
-  remote: https://github.com/vinsol-spree-contrib/spree-html-invoice.git
-  revision: 11d642c791c369c83cc361bc241b0739e851c3ba
-  branch: 3-2-stable
-  specs:
-    spree_html_invoice (3.2.0)
-      spree_core (~> 3.2.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -569,7 +561,6 @@ DEPENDENCIES
   spree_cash_on_delivery!
   spree_datashift_prod_import!
   spree_gateway (~> 3.3)
-  spree_html_invoice!
   spree_mail_settings!
   spree_paypal_express!
   spree_print_invoice!

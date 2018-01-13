@@ -35,6 +35,11 @@
   padding: .2em .2em 0;
 }
 
+.inputtxt {
+    border:0;
+    background:none;
+    -webkit-appearance: none;
+}
 /* .bt_payment_form { margin-left: -10px; } */
 /* .bt_payment_form table { border-collapse: inherit; } */
 /* .bt_payment_form [type="submit"] { margin-left: 10px; } */

@@ -8,7 +8,7 @@
         <%= select_tag :taxon,
               options_for_select([[Spree.t(:all_departments), '']] +
                                     @taxons.map {|t| [t.name, t.id]},
-                                    @taxon ? @taxon.id : params[:taxon]), 'aria-label' => 'Taxon', class: "custom-select" %>
+                                    @taxon ? @taxon.id : params[:taxon]), 'aria-label' => 'Taxon', class: "custom-select inputtxt" %>
       <% end %>
     </div>
     <%= search_field_tag :keywords, params[:keywords], placeholder: Spree.t(:search), class: "header-search-input" %>

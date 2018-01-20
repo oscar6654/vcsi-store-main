@@ -15,7 +15,7 @@
  * require spree/frontend/spree_bank_transfer
  *= require jquery-ui
  *= require jquery-ui/datepicker
- *= require spree/frontend/spree_disable_cart
+ * require spree/frontend/spree_disable_cart
 */
 
 .terms_and_conditions_box {

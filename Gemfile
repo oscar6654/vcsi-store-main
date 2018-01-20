@@ -24,7 +24,7 @@ gem 'spree_admin_roles_and_access', git: 'https://github.com/oscar6654/spree_adm
 gem 'spree-bank-transfer', require: 'spree_bank_transfer', github: 'oscar6654/spree_bank_transfer', branch: '3-2-updated'
 gem 'spree_print_invoice', github: 'oscar6654/spree_print_invoice', branch: 'master'
 gem 'spree_slider', github: 'oscar6654/spree_slider'
-gem 'spree_disable_cart', github: 'oscar6654/spree_disable_cart'
+# gem 'spree_disable_cart', github: 'oscar6654/spree_disable_cart'
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'

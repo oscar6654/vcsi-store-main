@@ -16,3 +16,4 @@
 //= require spree/backend/spree_admin_roles_and_access
 //= require spree/backend/spree_bank_transfer
 //= require spree/backend/spree_print_invoice
+//= require spree/backend/spree_disable_cart

@@ -19,7 +19,7 @@ GIT
 
 GIT
   remote: git://github.com/oscar6654/spree_disable_cart.git
-  revision: a025550bf18114718b5f560b0682cb079294d881
+  revision: 4d02293b870a3aa38dfc730b87cb315e95c270ac
   specs:
     spree_disable_cart (3.0.2)
       spree_core (~> 3.2.7)

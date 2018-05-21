@@ -36,6 +36,14 @@ GIT
       spree_core (>= 3.1.0, < 4.0)
 
 GIT
+  remote: git://github.com/oscar6654/spree_user_groups.git
+  revision: aaf7305a6504920eda982f2d3a8f4cb4d9799057
+  branch: 3-2-stable
+  specs:
+    spree_user_groups (3.2.7)
+      spree_core (~> 3.2.7)
+
+GIT
   remote: git://github.com/spree-contrib/better_spree_paypal_express.git
   revision: f62b408d97f747f8bf07f04790eaa2dd08443e4b
   specs:
@@ -565,6 +573,7 @@ DEPENDENCIES
   spree_paypal_express!
   spree_print_invoice!
   spree_slider!
+  spree_user_groups!
   spring
   spring-watcher-listen (~> 2.0.0)
   sprockets-helpers (~> 1.2.1)

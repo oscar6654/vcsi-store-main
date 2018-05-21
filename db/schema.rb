@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180107015942) do
+ActiveRecord::Schema.define(version: 20180519072541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1076,6 +1076,19 @@ ActiveRecord::Schema.define(version: 20180107015942) do
     t.index ["active"], name: "index_spree_trackers_on_active", using: :btree
   end
 
+  create_table "spree_user_groups", force: :cascade do |t|
+    t.string  "name"
+    t.integer "minimum_order", default: 0
+  end
+
+  create_table "spree_user_groups_variants", force: :cascade do |t|
+    t.integer  "user_group_id"
+    t.integer  "variant_id"
+    t.decimal  "price",         precision: 8, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "spree_users", force: :cascade do |t|
     t.string   "encrypted_password",     limit: 128
     t.string   "password_salt",          limit: 128
@@ -1106,6 +1119,7 @@ ActiveRecord::Schema.define(version: 20180107015942) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.integer  "user_group_id"
     t.index ["bill_address_id"], name: "index_spree_users_on_bill_address_id", using: :btree
     t.index ["deleted_at"], name: "index_spree_users_on_deleted_at", using: :btree
     t.index ["email"], name: "email_idx_unique", unique: true, using: :btree

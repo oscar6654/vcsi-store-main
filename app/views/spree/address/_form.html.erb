@@ -43,7 +43,7 @@
       <%= form.label :city do %>
         <%= Spree.t(:city) %><span class="required" title="required">*</span>
       <% end %>
-      <%= form.text_field :city, class: 'global-input required' %>
+      <%= form.select :city, [["Angeles","Angeles"],["Mabalacat", "Mabalacat"]], {}, {class: 'global-input required'} %>
     </div>
     <div class="col-sm-6 checkout-address-form-block" id=<%="#{address_id}country" %>>
       <%= form.label :country_id do %>

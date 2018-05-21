@@ -14,7 +14,7 @@ Spree.config do |config|
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
-  config.currency = "PHP"
+  # config.currency = "PHP"
   config.allow_guest_checkout = false
   # Custom logo for the frontend
   config.logo = "logo/vcsi.png"

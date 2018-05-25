@@ -3,6 +3,7 @@
 @import '../common/mixins.scss';
 
 .global-footer {
+  // position:fixed;
   width: $full;
   height: 50px;
   padding: 15px 0;
@@ -40,8 +41,9 @@
 @media (max-width: 767px) {
   .global-footer {
     height: auto;
-    position: static;
+    // position: static;
     font-size: 12px;
+
 
     .footer-right {
       margin-top: 10px;

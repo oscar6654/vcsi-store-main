@@ -24,8 +24,8 @@ gem 'spree_admin_roles_and_access', git: 'https://github.com/oscar6654/spree_adm
 gem 'spree-bank-transfer', require: 'spree_bank_transfer', github: 'oscar6654/spree_bank_transfer', branch: '3-2-updated'
 gem 'spree_print_invoice', github: 'oscar6654/spree_print_invoice', branch: 'master'
 gem 'spree_slider', github: 'oscar6654/spree_slider'
-# gem 'spree_price_books', github: 'oscar6654/spree_price_books', branch: '3-1-stable'
 gem "spree_user_groups", github: 'oscar6654/spree_user_groups', branch: '3-2-stable'
+gem 'spree_social', github: 'spree-contrib/spree_social'
 
 group :development do
   gem 'listen', '~> 3.0.5'

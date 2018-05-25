@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180519072541) do
+ActiveRecord::Schema.define(version: 20180525025460) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,16 @@ ActiveRecord::Schema.define(version: 20180519072541) do
     t.index ["position"], name: "index_spree_assets_on_position", using: :btree
     t.index ["viewable_id"], name: "index_assets_on_viewable_id", using: :btree
     t.index ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type", using: :btree
+  end
+
+  create_table "spree_authentication_methods", force: :cascade do |t|
+    t.string   "environment"
+    t.string   "provider"
+    t.string   "api_key"
+    t.string   "api_secret"
+    t.boolean  "active"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "spree_banks", force: :cascade do |t|
@@ -1076,6 +1086,16 @@ ActiveRecord::Schema.define(version: 20180519072541) do
     t.index ["active"], name: "index_spree_trackers_on_active", using: :btree
   end
 
+  create_table "spree_user_authentications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["uid", "provider"], name: "index_spree_user_authentications_on_uid_and_provider", unique: true, using: :btree
+    t.index ["user_id"], name: "index_spree_user_authentications_on_user_id", using: :btree
+  end
+
   create_table "spree_user_groups", force: :cascade do |t|
     t.string  "name"
     t.integer "minimum_order", default: 0
@@ -1180,4 +1200,5 @@ ActiveRecord::Schema.define(version: 20180519072541) do
   add_foreign_key "spree_permissions_permission_sets", "spree_permissions", column: "permission_id"
   add_foreign_key "spree_roles_permission_sets", "spree_permission_sets", column: "permission_set_id"
   add_foreign_key "spree_roles_permission_sets", "spree_roles", column: "role_id"
+  add_foreign_key "spree_user_authentications", "spree_users", column: "user_id"
 end

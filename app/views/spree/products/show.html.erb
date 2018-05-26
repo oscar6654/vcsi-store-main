@@ -1,6 +1,6 @@
 <% @body_id = 'product-details' %>
 
-<% cache cache_key_for_product do %>
+<% cache ([cache_key_for_product, @product.possible_promotions]) do %>
   <div data-hook="product_show" itemscope itemtype="https://schema.org/Product">
     <div class="row product-top-row">
       <div class="col-sm-6 product-image-section" data-hook="product_left_part">

@@ -26,6 +26,7 @@ gem 'spree_print_invoice', github: 'oscar6654/spree_print_invoice', branch: 'mas
 gem 'spree_slider', github: 'oscar6654/spree_slider'
 gem "spree_user_groups", github: 'oscar6654/spree_user_groups', branch: '3-2-stable'
 gem 'spree_social', github: 'spree-contrib/spree_social'
+gem 'spree_batch_products', github: 'oscar6654/spree-batch-products', branch: '3-2-stable'
 
 group :development do
   gem 'listen', '~> 3.0.5'

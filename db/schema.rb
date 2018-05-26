@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180525025460) do
+ActiveRecord::Schema.define(version: 20180526041029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -429,6 +429,22 @@ ActiveRecord::Schema.define(version: 20180525025460) do
     t.index ["deleted_at"], name: "index_spree_prices_on_deleted_at", using: :btree
     t.index ["variant_id", "currency"], name: "index_spree_prices_on_variant_id_and_currency", using: :btree
     t.index ["variant_id"], name: "index_spree_prices_on_variant_id", using: :btree
+  end
+
+  create_table "spree_product_datasheets", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "xls_file_name"
+    t.integer  "xls_file_size"
+    t.string   "xls_content_type"
+    t.datetime "processed_at"
+    t.datetime "deleted_at"
+    t.integer  "matched_records"
+    t.integer  "updated_records"
+    t.integer  "failed_records"
+    t.integer  "failed_queries"
+    t.integer  "user_id"
+    t.text     "product_errors"
   end
 
   create_table "spree_product_option_types", force: :cascade do |t|

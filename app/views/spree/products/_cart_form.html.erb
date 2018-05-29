@@ -48,7 +48,7 @@
               %>
               <%= label_tag "variant_id_#{ variant.id }" do %>
                 <span class="variant-description">
-                  <%= variant_options variant %>
+                  <%= (variant_options variant).upcase %>
                 </span>
                 <% if variant_price variant %>
                   <!-- <span class="price diff"><%= variant_price variant %></span> -->

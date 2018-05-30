@@ -16,8 +16,8 @@ Spree.config do |config|
   # config.track_inventory_levels = false
   # config.currency = "PHP"
   Spree::Config[:auto_capture_on_dispatch] = true
-  country = Spree::Country.find_by_name('Philippines')
-  config.default_country_id = country.id if country.present?
+  # country = Spree::Country.find_by_name('Philippines')
+  # config.default_country_id = country.id if country.present?
   config.allow_guest_checkout = false
   # Custom logo for the frontend
   config.logo = "logo/vcsi.png"

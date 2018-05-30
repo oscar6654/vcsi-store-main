@@ -16,7 +16,19 @@ class Spree::Admin::UserGroupsController < Spree::Admin::ResourceController
 
   def import
     Spree::UserGroup.import(params[:file])
-    flash.notice = "Uploaded Successfully"
+    flash.notice = "Price Group Uploaded Successfully"
+    redirect_to admin_user_groups_path
+  end
+
+  def product
+    Spree::UserGroup.product(params[:file])
+    flash.notice = "Product Promotionable Uploaded Successfully"
+    redirect_to admin_user_groups_path
+  end
+
+  def stock
+    Spree::UserGroup.stock(params[:file])
+    flash.notice = "Stock Updated Successfully"
     redirect_to admin_user_groups_path
   end
 

@@ -7,7 +7,7 @@
       <% labels = filter[:labels] || filter[:conds].map {|m,c| [m,m]} %>
       <% next if labels.empty? %>
       <div class="navigation sidebar-item" data-hook="navigation">
-        <h4 class="sidebar-title">
+        <h4 class="sidebar-title" style="cursor:pointer;">
           <div class="row">
             <div class="col-xs-10 sidebar-title-text">
               <%= filter[:name] %>

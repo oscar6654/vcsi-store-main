@@ -22,20 +22,32 @@ class Spree::UserGroup < ActiveRecord::Base
     end
   end
 
-  def self.import(file)
-    #spreadsheet = Roo::Spreadsheet.open(file.path)
-    #header = spreadsheet.row(1)
+  def self.product(file)
     CSV.foreach(file.path, headers: true, encoding:'ISO-8859-1') do |row|
-      # binding.pry
+      product = Spree::Product.find(row["product_id"])
+      if !product.nil?
+        product.update_attributes(promotionable: row["promotionable"])
+      end
+    end
+  end
+
+  def self.import(file)
+    CSV.foreach(file.path, headers: true, encoding:'ISO-8859-1') do |row|
       user_group = Spree::UserGroup.find(row["user_group"])
       if user_group.user_groups_variants.find_by_variant_id(row["variant_id"]).nil?
         user_group.user_groups_variants.create!(variant_id: row["variant_id"], price: row["price"])
       else
         user_group.user_groups_variants.find_by_variant_id(row["variant_id"]).update_attributes(price: row["price"])
       end
-      # invoice = find_by_id(row["id"]) || new
-      # invoice.attributes = row.to_hash
-      # invoice.save!
+    end
+  end
+
+  def self.stock(file)
+    CSV.foreach(file.path, headers: true, encoding:'ISO-8859-1') do |row|
+      stock_data = Spree::Variant.find_by_id(row["variant_id"])
+      if !stock_data.nil?
+        stock_data.stock_items.find_by_stock_location_id(row["location_id"]).update_attributes(count_on_hand: row["count"])
+      end
     end
   end
 

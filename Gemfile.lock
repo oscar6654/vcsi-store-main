@@ -50,7 +50,7 @@ GIT
 
 GIT
   remote: git://github.com/oscar6654/spree_user_groups.git
-  revision: d01bf7421c37dc98a0e556b96dc9bc2f52442052
+  revision: 0c1818713e455ef8f737f443de3a530cece04217
   branch: 3-2-upload
   specs:
     spree_user_groups (3.2.7)

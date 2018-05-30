@@ -5,16 +5,30 @@
 <% content_for :page_actions do %>
   <%= button_link_to Spree.t(:new_user_group), new_object_url, :icon => 'plus', :id => 'admin_new_user_group_link', class: 'btn-success' %>
 <% end %>
-<%= form_tag import_admin_user_groups_path, multipart: true do %>
-  <fieldset class="form-group field">
-    <br/>
+<div class="row">
+  <div class="col-sm-12">
     <center>
-    <label for="upload_price_group">Upload Price Group</label>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import", class:"btn-success"%>
-    </center>
-  </fieldset>
-<%end%>
+    <%= form_tag import_admin_user_groups_path, multipart: true do %>
+        <br/>
+        <label for="upload_price_group">Upload Price Group</label>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Import Price Group", class:"btn-success"%>
+    <%end%>
+
+    <%= form_tag stock_admin_user_groups_path, multipart: true do %>
+        <br/>
+        <label for="upload_price_group">Update Stock Only</label>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Update Stock", class:"btn-success"%>
+    <%end%>
+    <%= form_tag product_admin_user_groups_path, multipart: true do %>
+        <br/>
+        <label for="upload_price_group">Update Stock Only</label>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Update Promotable", class:"btn-success"%>
+    <%end%>
+  </center>
+  </div>
 <% if @user_groups.any? %>
   <table class="table" id='listing_user_groups'>
     <thead>

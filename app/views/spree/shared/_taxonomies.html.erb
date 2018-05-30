@@ -4,7 +4,7 @@
   <% @taxonomies.each do |taxonomy| %>
     <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
       <% if taxonomy.root.children.any? %>
-        <h4 class="sidebar-title">
+        <h4 class="sidebar-title" style="cursor:pointer;">
           <div class="row">
             <div class="col-xs-10 sidebar-title-text">
               <%= Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name) %>

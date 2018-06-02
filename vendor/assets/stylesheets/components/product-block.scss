@@ -2,15 +2,34 @@
 @import '../common/variables.scss';
 @import '../common/mixins.scss';
 
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .product-block {
-  height: 240px;
+  // height: 240px;
+  // height: 100%!important;
   margin-bottom: 40px;
+  padding: .4rem;
+  // display: table-cell;
+  // display: flex;
+  // padding: 0px 0.2rem;
 
   .product-holder {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    // box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 1.25rem;
     &:hover {
       .product-title {
         color: $link-maroon;
       }
+      transition: box-shadow .25s;
+      box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
     }
   }
 

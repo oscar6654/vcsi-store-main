@@ -23,7 +23,7 @@ Spree.config do |config|
   config.logo = "logo/vcsi.png"
   # Custom logo for the admin
   config.admin_interface_logo = "logo/vcsi.png"
-  config.products_per_page = 8
+  config.products_per_page = 12
 end
 
 Spree.user_class = "Spree::User"

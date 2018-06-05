@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180526041029) do
+ActiveRecord::Schema.define(version: 20180605031519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -478,7 +478,7 @@ ActiveRecord::Schema.define(version: 20180526041029) do
   end
 
   create_table "spree_products", force: :cascade do |t|
-    t.string   "name",                 default: "",   null: false
+    t.string   "name",                 default: "",    null: false
     t.text     "description"
     t.datetime "available_on"
     t.datetime "deleted_at"
@@ -487,11 +487,12 @@ ActiveRecord::Schema.define(version: 20180526041029) do
     t.string   "meta_keywords"
     t.integer  "tax_category_id"
     t.integer  "shipping_category_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.boolean  "promotionable",        default: true
     t.string   "meta_title"
     t.datetime "discontinue_on"
+    t.boolean  "featured",             default: false
     t.index ["available_on"], name: "index_spree_products_on_available_on", using: :btree
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at", using: :btree
     t.index ["discontinue_on"], name: "index_spree_products_on_discontinue_on", using: :btree

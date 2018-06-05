@@ -26,7 +26,7 @@ class Spree::UserGroup < ActiveRecord::Base
     CSV.foreach(file.path, headers: true, encoding:'ISO-8859-1') do |row|
       product = Spree::Product.find(row["product_id"])
       if !product.nil?
-        product.update_attributes(promotionable: row["promotionable"])
+        product.update_attributes(featured: row["featured"])
       end
     end
   end

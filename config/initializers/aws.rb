@@ -12,7 +12,8 @@ if Rails.env.production?
     s3_headers:     { "Cache-Control" => "max-age=31557600" },
     s3_protocol:    "https",
     bucket:         ENV['S3_BUCKET_NAME'],
-    url:            ":s3_domain_url",
+    url:            ":s3_alias_url",
+    s3_host_alias:  "dgzfg44y5x8it.cloudfront.net",
 
     styles: {
         mini:     "48x48>",

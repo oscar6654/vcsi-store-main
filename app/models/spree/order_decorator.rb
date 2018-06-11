@@ -1,4 +1,4 @@
-Spree::Order.class_eval do
+Spree::Order::Checkout.class_eval do
 
   # attr_accessible :terms_and_conditions # uncomment for Spree below version 2.1
 

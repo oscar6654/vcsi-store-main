@@ -32,6 +32,7 @@ gem 'spree_batch_products', github: 'oscar6654/spree-batch-products', branch: '3
 gem 'sprockets-helpers', '~> 1.2.1'
 # gem 'vinsol_spree_themes', github: 'vinsol-spree-contrib/spree_themes', branch: '3-2-stable'
 gem 'utf8-cleaner'
+gem 'slack-notifier'
 
 group :development do
   gem 'listen', '~> 3.0.5'

@@ -18,7 +18,7 @@ Bundler.require(*Rails.groups)
 
 module Spree32
   class Application < Rails::Application
-    
+
     config.to_prepare do
       # Load application's model / class decorators
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
@@ -37,7 +37,10 @@ module Spree32
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-
+    # config.time_zone = 'Taipei'
+    # Time.now.in_time_zone
+    # DateTime.now.in_time_zone
+    # config.active_record.default_timezone = :local
     # Don't generate system test files.
     config.generators.system_tests = nil
   end

@@ -18,7 +18,9 @@
  *= require spree/frontend/spree_social
 */
 
-
+.form-control{
+  width: auto;
+}
 .terms_and_conditions_box {
   padding: 15px;
   margin-bottom: 15px;

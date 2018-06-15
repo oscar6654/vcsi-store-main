@@ -1,4 +1,4 @@
-Spree::Order::Checkout.class_eval do
+Spree::Order.class_eval do
 
   # attr_accessible :terms_and_conditions # uncomment for Spree below version 2.1
 
@@ -12,6 +12,14 @@ Spree::Order::Checkout.class_eval do
       self.errors[:terms_and_conditions].empty? ? true : false
     end
   end
+
+  MINIMUM_ORDER_VALUE = (500).to_i
+  def checkout_allowed?
+    return :not_empty     unless line_items.count > 0
+    return :minimum_value unless total >= MINIMUM_ORDER_VALUE
+    true
+  end
+
 end
 
 # Validate on state change
@@ -20,3 +28,12 @@ Spree::Order.state_machine.before_transition :to => :delivery, :do => :valid_ter
 # Add terms_and_conditions to strong parameters
 Spree::PermittedAttributes.checkout_attributes << :terms_and_conditions # Remove if Spree is below version 2.1
 # Spree::PermittedAttributes.checkout_attributes << :terms_and_conditions unless Spree::PermittedAttributes.checkout_attributes.include?(:terms_and_conditions)
+
+# Spree::Order.class_eval do
+#   MINIMUM_ORDER_VALUE = (500).to_i
+#   def checkout_allowed?
+#     return :not_empty     unless line_items.count > 0
+#     return :minimum_value unless total >= MINIMUM_ORDER_VALUE
+#     true
+#   end
+# end

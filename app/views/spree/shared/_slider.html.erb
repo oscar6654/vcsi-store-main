@@ -1,0 +1,9 @@
+<% if Spree::Slide.published.count > 0 %>
+
+      <% Spree::Slide.published.order('position ASC').each do |s| %>
+
+          <!-- <img src="https://vcsi.sgp1.digitaloceanspaces.com/AR_2016_BB_HR%20(1).jpg" style="max-width: 100%;"/> -->
+          <%= image_tag(s.slide_image.url, :style => "max-width: 100%")%>
+      <% end %>
+
+<% end %>

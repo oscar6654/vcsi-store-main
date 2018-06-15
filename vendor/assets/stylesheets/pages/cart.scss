@@ -77,7 +77,7 @@
       border: solid 1px $color-black;
       display: inline-block;
       font-size: 13px;
-      @include border-radius(0);      
+      @include border-radius(0);
     }
   }
 
@@ -102,7 +102,7 @@
   }
 
   .cart-button-or-text {
-    padding: 10px 10px 0;
+    padding: 10px 10px 10px;
     display: inline-block;
   }
 }

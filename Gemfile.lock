@@ -22,6 +22,14 @@ GIT
       zip-zip
 
 GIT
+  remote: git://github.com/oscar6654/spree_ajax_add_to_cart.git
+  revision: a070496dc624c0d248ed3f9b4a653509523c12b3
+  branch: 3-2-stable
+  specs:
+    spree_ajax_add_to_cart (3.0.0)
+      spree_core (~> 3.2.7)
+
+GIT
   remote: git://github.com/oscar6654/spree_bank_transfer.git
   revision: d4fe7feb52ec0b81ac41161a29d27893d97eee85
   branch: 3-2-updated
@@ -645,6 +653,7 @@ DEPENDENCIES
   spree (~> 3.2.7)
   spree-bank-transfer!
   spree_admin_roles_and_access!
+  spree_ajax_add_to_cart!
   spree_auth_devise (~> 3.3)
   spree_batch_products!
   spree_better_terms_and_conditions!

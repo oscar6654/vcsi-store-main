@@ -28,8 +28,6 @@ gem "spree_user_groups", github: 'oscar6654/spree_user_groups', branch: '3-2-upl
 gem 'spree_social', github: 'spree-contrib/spree_social'
 gem 'spree_batch_products', github: 'oscar6654/spree-batch-products', branch: '3-2-stable'
 gem 'spree_ajax_add_to_cart', github: 'oscar6654/spree_ajax_add_to_cart', branch: '3-2-stable'
-# gem 'spree_image_multi_upload', github: 'medaved/spree_image_multi_upload'
-# gem 'spree_import', github: 'oscar6654/spree_import', branch: '3-2-stable'
 gem 'sprockets-helpers', '~> 1.2.1'
 # gem 'vinsol_spree_themes', github: 'vinsol-spree-contrib/spree_themes', branch: '3-2-stable'
 gem 'utf8-cleaner'

@@ -26,6 +26,7 @@
             <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
 
             <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
+              <img src="https://vcsi.sgp1.digitaloceanspaces.com/AR_2016_BB_HR%20(1).jpg" style="max-width: 100%;"/>
               <%= flash_messages %>
               <%= yield %>
             </div>

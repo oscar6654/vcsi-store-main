@@ -18,6 +18,11 @@
  *= require spree/frontend/spree_social
 */
 
+.old-price {
+    text-decoration: line-through;
+    color: silver;
+}
+
 .form-control{
   width: auto;
 }

@@ -36,6 +36,11 @@
                 <% end %>
               </div>
               <div class="product-price-block" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                <% if product.on_sale? %>
+                  <span class="old-price">
+                    <%= display_original_price(product) %>
+                  </span>
+                <% end %>
                 <%= display_price(product) %>
               </div>
             </div>

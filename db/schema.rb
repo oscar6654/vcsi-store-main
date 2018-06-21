@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180605031519) do
+ActiveRecord::Schema.define(version: 20180621040410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -732,6 +732,19 @@ ActiveRecord::Schema.define(version: 20180605031519) do
     t.integer "permission_id", null: false
     t.index ["permission_id"], name: "index_spree_roles_permissions_on_permission_id", using: :btree
     t.index ["role_id"], name: "index_spree_roles_permissions_on_role_id", using: :btree
+  end
+
+  create_table "spree_sale_prices", force: :cascade do |t|
+    t.integer  "price_id"
+    t.float    "value"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.boolean  "enabled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["price_id", "start_at", "end_at", "enabled"], name: "index_active_sale_prices_for_price", using: :btree
+    t.index ["price_id"], name: "index_sale_prices_for_price", using: :btree
+    t.index ["start_at", "end_at", "enabled"], name: "index_active_sale_prices_for_all_variants", using: :btree
   end
 
   create_table "spree_shipments", force: :cascade do |t|

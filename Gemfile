@@ -30,6 +30,7 @@ gem 'spree_batch_products', github: 'oscar6654/spree-batch-products', branch: '3
 gem 'spree_ajax_add_to_cart', github: 'oscar6654/spree_ajax_add_to_cart', branch: '3-2-stable'
 gem 'sprockets-helpers', '~> 1.2.1'
 gem 'spree_sales', github: 'oscar6654/spree_sales', branch: '3-2-stable'
+gem 'spree_reffiliate', github: 'vinsol-spree-contrib/spree_reffiliate'
 # gem 'vinsol_spree_themes', github: 'vinsol-spree-contrib/spree_themes', branch: '3-2-stable'
 gem 'utf8-cleaner'
 gem 'slack-notifier'

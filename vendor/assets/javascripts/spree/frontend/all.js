@@ -17,3 +17,4 @@
 //= require spree/frontend/spree_admin_roles_and_access
 
 //= require spree/frontend/spree_bank_transfer
+//= require spree/frontend/spree_reffiliate

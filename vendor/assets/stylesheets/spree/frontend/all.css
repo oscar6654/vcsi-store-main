@@ -17,6 +17,8 @@
  *= require jquery-ui/datepicker
  *= require spree/frontend/spree_social
  *= require spree/frontend/spree_paymaya
+ *= require owl.carousel
+ *= require owl.theme
 */
 
 .old-price {

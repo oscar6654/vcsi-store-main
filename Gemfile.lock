@@ -418,6 +418,7 @@ GEM
       omniauth-oauth (~> 1.1)
       rack
     orm_adapter (0.5.0)
+    owlcarousel-rails (2.2.3.5)
     paperclip (4.3.7)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -693,6 +694,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   listen (~> 3.0.5)
+  owlcarousel-rails
   paymaya!
   pg (~> 0.18)
   pry-rails

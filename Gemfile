@@ -33,7 +33,7 @@ gem 'spree_sales', github: 'oscar6654/spree_sales', branch: '3-2-stable'
 gem 'spree_reffiliate', github: 'vinsol-spree-contrib/spree_reffiliate'
 gem 'paymaya', github: 'oscar6654/paymaya-ruby-sdk'
 gem 'spree_paymaya', github: 'oscar6654/spree_paymaya'
-
+gem 'owlcarousel-rails'
 # gem 'vinsol_spree_themes', github: 'vinsol-spree-contrib/spree_themes', branch: '3-2-stable'
 gem 'utf8-cleaner'
 gem 'slack-notifier'

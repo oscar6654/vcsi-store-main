@@ -16,6 +16,7 @@
  *= require jquery-ui
  *= require jquery-ui/datepicker
  *= require spree/frontend/spree_social
+ *= require spree/frontend/spree_paymaya
 */
 
 .old-price {
@@ -41,6 +42,7 @@
 
 .ui-datepicker {
   width: 18em; /* fix calendar width  *= require spree/frontend/spree_social
+ *= require spree/frontend/spree_paymaya
 */
   padding: .2em .2em 0;
 }
@@ -71,12 +73,17 @@
 
 
 /* .bt_payment_form { margin-left: -10px; }  *= require spree/frontend/spree_social
+ *= require spree/frontend/spree_paymaya
 */
 /* .bt_payment_form table { border-collapse: inherit; }  *= require spree/frontend/spree_social
+ *= require spree/frontend/spree_paymaya
 */
 /* .bt_payment_form [type="submit"] { margin-left: 10px; }  *= require spree/frontend/spree_social
+ *= require spree/frontend/spree_paymaya
 */
 /* .bt_payment_form input[type="text"], .bt_payment_form input[type="date"] { width: 138px; }  *= require spree/frontend/spree_social
+ *= require spree/frontend/spree_paymaya
 */
 /* .hidden { display: none; }  *= require spree/frontend/spree_social
+ *= require spree/frontend/spree_paymaya
 */

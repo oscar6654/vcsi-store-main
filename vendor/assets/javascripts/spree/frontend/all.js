@@ -18,3 +18,4 @@
 
 //= require spree/frontend/spree_bank_transfer
 //= require spree/frontend/spree_reffiliate
+//= require spree/frontend/spree_paymaya

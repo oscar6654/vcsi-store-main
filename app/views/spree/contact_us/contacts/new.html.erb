@@ -1,0 +1,50 @@
+<% content_for :head do -%>
+  <meta name="title" content="<%= Spree.t(:contact_us_title) %>">
+<% end -%>
+
+<% content_for :sidebar do
+
+   if "products" == @current_controller && @taxon %>
+    <%= render :partial => "spree/shared/filters" %>
+  <% elsif !(@taxonomies.nil?)%>
+  <div class="fb-page" data-href="https://www.facebook.com/vcsistore/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/vcsistore/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/vcsistore/">VCSI STORE</a></blockquote></div>
+  <br/>
+  <br/>
+    <%= render :partial => "spree/shared/taxonomies" %>
+  <% end
+ end %>
+
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @contact } %>
+
+<h1><%= Spree.t(:contact_us_title) %></h1>
+<br/>
+<%= form_for @contact, :url => contacts_path, :html => { :novalidate => '' } do |f| %>
+  <% if SpreeContactUs.require_name %>
+    <p>
+      <%= f.label :name %>
+      <span class="required">*</span><br/>
+      <%= f.text_field :name, class: 'required form-control' %>
+    </p>
+  <% end %>
+  <p>
+    <%= f.label :email %>
+    <span class="required">*</span><br/>
+    <%= f.email_field :email, class: 'required form-control email' %>
+  </p>
+  <% if SpreeContactUs.require_subject %>
+    <p>
+      <%= f.label :subject %>
+      <span class="required">*</span><br/>
+      <%= f.text_field :subject, class: 'required form-control' %>
+    </p>
+  <% end %>
+  <p>
+    <%= f.label :message %>
+    <span class="required">*</span><br/>
+    <%= f.text_area :message, class: 'required form-control' %>
+  </p>
+  <br/>
+  <p>
+    <%= f.submit Spree.t(:submit), :alt => Spree.t(:submit), :id => 'contact_us_contact_submit', :title => Spree.t(:submit), class: "btn btn-success"%>
+  </p>
+<% end %>

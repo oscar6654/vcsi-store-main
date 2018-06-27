@@ -12,6 +12,6 @@ Rails.application.routes.draw do
     # Your new routes
     get "/terms-conditions" => "terms_conditions#index"
     get "/privacy-policy" => "privacy_policy#index"
-    get "/contact-us" => "contact_us#index"
+    # get "/contact-us" => "contact_us#index"
   end
 end

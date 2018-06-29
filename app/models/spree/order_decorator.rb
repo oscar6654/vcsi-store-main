@@ -22,10 +22,10 @@ Spree::Order.class_eval do
   private
     def create_commission_transaction
       # register_commission_transaction(affiliate) if affiliate.present?
-      binding.pry
+      # binding.pry
       if user.referred_record != nil
         referred = Spree::Referral.where('lower(code) = ?', user.referred_record.referral.code.downcase).first
-        binding.pry
+        # binding.pry
         store_credit = create_store_credits(referred.user) if referrer_eligible?(referred.user)
       end
       return true

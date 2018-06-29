@@ -12,7 +12,7 @@
 //= require spree/backend/spree_datashift_prod_import
 // require spree/backend/spree_themes
 //= require spree/backend/spree_paypal_express
-//= require spree/backend/spree_better_terms_and_conditions
+// require spree/backend/spree_better_terms_and_conditions
 //= require spree/backend/spree_admin_roles_and_access
 //= require spree/backend/spree_bank_transfer
 //= require spree/backend/spree_print_invoice

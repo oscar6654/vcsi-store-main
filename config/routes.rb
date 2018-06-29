@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   Spree::Core::Engine.routes.prepend do
     # Your new routes
+    get "/about-us" => "about_us#index"
     get "/terms-conditions" => "terms_conditions#index"
     get "/privacy-policy" => "privacy_policy#index"
     # get "/contact-us" => "contact_us#index"

@@ -38,6 +38,7 @@ gem 'spree_contact_us', :git => 'https://github.com/spree-contrib/spree_contact_
 # gem 'vinsol_spree_themes', github: 'vinsol-spree-contrib/spree_themes', branch: '3-2-stable'
 gem 'utf8-cleaner'
 gem 'slack-notifier'
+gem 'rails-assets-countdown', source: 'https://rails-assets.org'
 
 group :development do
   gem 'listen', '~> 3.0.5'

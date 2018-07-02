@@ -22,7 +22,7 @@ Spree.config do |config|
   # Custom logo for the frontend
   config.logo = "logo/vcsi.png"
   # Custom logo for the admin
-  config.admin_interface_logo = "logo/vcsi.png"
+  config.admin_interface_logo = "logo/VCSI-logo-trans.png"
   config.products_per_page = 12
 end
 

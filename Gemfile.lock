@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/oscar6654/chikka.git
+  revision: d79e529fbef7a273933ceb6d3e517ca10e2fa99c
+  specs:
+    chikka (0.2.2)
+
+GIT
   remote: git://github.com/oscar6654/datashift_spree.git
   revision: 6d4dfbe363511b8f00b4f14571529241454433dd
   branch: 3-2-edit
@@ -690,6 +696,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk (< 2.0)
   capybara
+  chikka!
   coffee-rails
   datashift!
   datashift_spree!

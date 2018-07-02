@@ -138,7 +138,7 @@ module Spree
       end
 
       def load_order
-        binding.pry
+        # binding.pry
         @order = Spree::Order.includes(:adjustments).find_by!(number: params[:id])
         authorize! action, @order
       end

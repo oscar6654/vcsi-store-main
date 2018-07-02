@@ -59,7 +59,7 @@ GIT
 
 GIT
   remote: git://github.com/oscar6654/spree_paymaya.git
-  revision: b842e9061262d287f3d6f58392418350160837a8
+  revision: c87690947bb6404b9872c15769f50e0889234cdc
   specs:
     spree_paymaya (0.0.1.alpha)
       paymaya

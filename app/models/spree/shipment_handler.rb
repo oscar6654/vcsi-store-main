@@ -36,7 +36,7 @@ module Spree
       if @shipment.order.ship_address.phone.length > 10
         @phone = @shipment.order.ship_address.phone.chars.last(10).join
         client = Chikka::Client.new(client_id:ENV["CHIKKA_CLIENT_ID"], secret_key:ENV["CHIKKA_SECRET_KEY"], shortcode:ENV["CHIKKA_SHORT_CODE"])
-        client.send_message(message:'Your Order is on your way!', mobile_number: @phone)
+        client.send_message(message:'Your Order is on your way! *DO NOT REPLY', mobile_number: @phone)
       end
       new_state = OrderUpdater.new(order).update_shipment_state
       order.update_columns(shipment_state: new_state, updated_at: Time.current)

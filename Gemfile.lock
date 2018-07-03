@@ -159,6 +159,15 @@ GIT
       spree_core (~> 3.2.0)
 
 GIT
+  remote: git://github.com/vinsol-spree-contrib/spree_favorite_products.git
+  revision: 1a6e0902fac19fb8a7ae0ff6e303e4b399dac572
+  branch: 3-2-stable
+  specs:
+    spree_favorite_products (3.2.1)
+      spree_core (~> 3.2.0)
+      spree_extension (~> 0.0.5)
+
+GIT
   remote: git://github.com/vinsol-spree-contrib/spree_reffiliate.git
   revision: a3dd41b96fab69a6ee629b15e016e5e865971377
   specs:
@@ -726,6 +735,7 @@ DEPENDENCIES
   spree_cash_on_delivery!
   spree_contact_us!
   spree_datashift_prod_import!
+  spree_favorite_products!
   spree_gateway (~> 3.3)
   spree_mail_settings!
   spree_paymaya!

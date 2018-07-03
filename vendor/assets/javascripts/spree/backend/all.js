@@ -17,3 +17,5 @@
 //= require spree/backend/spree_bank_transfer
 //= require spree/backend/spree_print_invoice
 //= require spree/backend/spree_paymaya
+
+//= require admin/spree_favorite_products

@@ -20,3 +20,7 @@
 //= require spree/frontend/spree_reffiliate
 //= require spree/frontend/spree_paymaya
 //= require owl.carousel
+
+//= require store/spree_favorite_products
+
+//= require spree/frontend/spree_favorite_products

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180703075955) do
+ActiveRecord::Schema.define(version: 20180704023544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -670,6 +670,7 @@ ActiveRecord::Schema.define(version: 20180703075955) do
     t.string   "presentation", null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.boolean  "filterable"
     t.index ["name"], name: "index_spree_properties_on_name", using: :btree
   end
 
@@ -1150,6 +1151,7 @@ ActiveRecord::Schema.define(version: 20180703075955) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "position",   default: 0
+    t.boolean  "filterable"
     t.index ["position"], name: "index_spree_taxonomies_on_position", using: :btree
   end
 

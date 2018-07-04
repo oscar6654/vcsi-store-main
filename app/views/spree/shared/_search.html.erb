@@ -1,6 +1,6 @@
 <% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots %>
 
-<%= form_tag spree.products_path, method: :get do %>
+<%= form_tag spree.products_path, method: :get, html: { autocomplete: "off" } do %>
   <div class="header-search-block">
     <div class="custom-select-holder">
       <span class="custom-select-arrow"></span>
@@ -11,7 +11,7 @@
                                     @taxon ? @taxon.id : params[:taxon]), 'aria-label' => 'Taxon', class: "custom-select inputtxt" %>
       <% end %>
     </div>
-    <%= search_field_tag :keywords, params[:keywords], placeholder: Spree.t(:search), class: "header-search-input" %>
+    <%= search_field_tag :keywords, params[:keywords], placeholder: Spree.t(:search), class: "header-search-input", autocomplete: "off" %>
     <%= button_tag(type: 'submit', class: "header-search-button") do %>
       <i class="glyphicon glyphicon-search"></i>
     <% end %>

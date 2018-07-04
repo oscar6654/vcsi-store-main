@@ -40,6 +40,8 @@ gem 'spree_favorite_products', github: 'vinsol-spree-contrib/spree_favorite_prod
 gem 'utf8-cleaner'
 gem 'slack-notifier'
 gem 'rails-assets-countdown', source: 'https://rails-assets.org'
+gem 'searchkick'
+gem 'spree_searchkick', github: 'oscar6654/spree_searchkick'
 
 group :development do
   gem 'listen', '~> 3.0.5'

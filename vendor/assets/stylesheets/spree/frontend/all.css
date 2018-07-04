@@ -21,6 +21,7 @@
  *= require owl.theme
  *= require store/spree_favorite_products
  *= require spree/frontend/spree_searchkick
+ *= require spree/frontend/spree_digital_assets
 */
 
 .old-price {
@@ -32,6 +33,7 @@
   width: auto;
 }  *= require store/spree_favorite_products
  *= require spree/frontend/spree_searchkick
+ *= require spree/frontend/spree_digital_assets
 */
 .terms_and_conditions_box {
   padding: 15px;
@@ -51,6 +53,7 @@
  *= require spree/frontend/spree_paymaya
  *= require store/spree_favorite_products
  *= require spree/frontend/spree_searchkick
+ *= require spree/frontend/spree_digital_assets
 */
   padding: .2em .2em 0;
 }
@@ -84,24 +87,29 @@
  *= require spree/frontend/spree_paymaya
  *= require store/spree_favorite_products
  *= require spree/frontend/spree_searchkick
+ *= require spree/frontend/spree_digital_assets
 */
 /* .bt_payment_form table { border-collapse: inherit; }  *= require spree/frontend/spree_social
  *= require spree/frontend/spree_paymaya
  *= require store/spree_favorite_products
  *= require spree/frontend/spree_searchkick
+ *= require spree/frontend/spree_digital_assets
 */
 /* .bt_payment_form [type="submit"] { margin-left: 10px; }  *= require spree/frontend/spree_social
  *= require spree/frontend/spree_paymaya
  *= require store/spree_favorite_products
  *= require spree/frontend/spree_searchkick
+ *= require spree/frontend/spree_digital_assets
 */
 /* .bt_payment_form input[type="text"], .bt_payment_form input[type="date"] { width: 138px; }  *= require spree/frontend/spree_social
  *= require spree/frontend/spree_paymaya
  *= require store/spree_favorite_products
  *= require spree/frontend/spree_searchkick
+ *= require spree/frontend/spree_digital_assets
 */
 /* .hidden { display: none; }  *= require spree/frontend/spree_social
  *= require spree/frontend/spree_paymaya
  *= require store/spree_favorite_products
  *= require spree/frontend/spree_searchkick
+ *= require spree/frontend/spree_digital_assets
 */

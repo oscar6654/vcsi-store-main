@@ -25,4 +25,3 @@
 
 //= require spree/frontend/spree_favorite_products
 //= require spree/frontend/spree_searchkick
-//= require spree/frontend/spree_digital_assets

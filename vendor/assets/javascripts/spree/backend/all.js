@@ -20,4 +20,3 @@
 
 //= require admin/spree_favorite_products
 //= require spree/backend/spree_searchkick
-//= require spree/backend/spree_digital_assets

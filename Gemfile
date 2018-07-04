@@ -42,7 +42,7 @@ gem 'slack-notifier'
 gem 'rails-assets-countdown', source: 'https://rails-assets.org'
 gem 'searchkick'
 gem 'spree_searchkick', github: 'oscar6654/spree_searchkick'
-gem 'spree_digital_assets' , github: 'vinsol-spree-contrib/spree_digital_assets'
+# gem 'spree_digital_assets' , github: 'vinsol-spree-contrib/spree_digital_assets'
 
 group :development do
   gem 'listen', '~> 3.0.5'

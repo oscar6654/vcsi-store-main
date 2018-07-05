@@ -15,6 +15,7 @@
                   <% if spree_current_user %>
                     <li class="header-top-nav"><%= link_to Spree.t(:my_account), spree.account_path, class: 'header-top-nav-link' %></li>
                     <li class='header-top-nav'><%= link_to 'Favorite Products', favorite_products_path, class: 'header-top-nav-link' %></li>
+                    <li class='header-top-nav'><%= link_to 'Product On Sale', sale_path, class: 'header-top-nav-link' %></li>
                     <li class="header-top-nav"><%= link_to Spree.t(:logout), spree.logout_path, class: 'header-top-nav-link' %></li>
 
                   <% else %>
@@ -24,6 +25,7 @@
                         <%= Spree.t(:login) %>
                       <% end %>
                     </li>
+                      <li class='header-top-nav'><%= link_to 'Product On Sale', sale_path, class: 'header-top-nav-link' %></li>
                   <% end %>
                 </ul>
               </div>

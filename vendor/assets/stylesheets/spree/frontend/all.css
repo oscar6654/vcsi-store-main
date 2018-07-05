@@ -22,6 +22,8 @@
  *= require store/spree_favorite_products
  *= require spree/frontend/spree_searchkick
 
+ *= require spree/frontend/spree_events_tracker
+ *= require spree/frontend/spree_admin_insights
 */
 
 .old-price {
@@ -34,6 +36,9 @@
 }  *= require store/spree_favorite_products
  *= require spree/frontend/spree_searchkick
  *= require spree/frontend/spree_digital_assets
+ *= require spree/frontend/spree_one_page_stock_management
+ *= require spree/frontend/spree_events_tracker
+ *= require spree/frontend/spree_admin_insights
 */
 .terms_and_conditions_box {
   padding: 15px;
@@ -54,6 +59,9 @@
  *= require store/spree_favorite_products
  *= require spree/frontend/spree_searchkick
  *= require spree/frontend/spree_digital_assets
+ *= require spree/frontend/spree_one_page_stock_management
+ *= require spree/frontend/spree_events_tracker
+ *= require spree/frontend/spree_admin_insights
 */
   padding: .2em .2em 0;
 }
@@ -88,28 +96,43 @@
  *= require store/spree_favorite_products
  *= require spree/frontend/spree_searchkick
  *= require spree/frontend/spree_digital_assets
+ *= require spree/frontend/spree_one_page_stock_management
+ *= require spree/frontend/spree_events_tracker
+ *= require spree/frontend/spree_admin_insights
 */
 /* .bt_payment_form table { border-collapse: inherit; }  *= require spree/frontend/spree_social
  *= require spree/frontend/spree_paymaya
  *= require store/spree_favorite_products
  *= require spree/frontend/spree_searchkick
  *= require spree/frontend/spree_digital_assets
+ *= require spree/frontend/spree_one_page_stock_management
+ *= require spree/frontend/spree_events_tracker
+ *= require spree/frontend/spree_admin_insights
 */
 /* .bt_payment_form [type="submit"] { margin-left: 10px; }  *= require spree/frontend/spree_social
  *= require spree/frontend/spree_paymaya
  *= require store/spree_favorite_products
  *= require spree/frontend/spree_searchkick
  *= require spree/frontend/spree_digital_assets
+ *= require spree/frontend/spree_one_page_stock_management
+ *= require spree/frontend/spree_events_tracker
+ *= require spree/frontend/spree_admin_insights
 */
 /* .bt_payment_form input[type="text"], .bt_payment_form input[type="date"] { width: 138px; }  *= require spree/frontend/spree_social
  *= require spree/frontend/spree_paymaya
  *= require store/spree_favorite_products
  *= require spree/frontend/spree_searchkick
  *= require spree/frontend/spree_digital_assets
+ *= require spree/frontend/spree_one_page_stock_management
+ *= require spree/frontend/spree_events_tracker
+ *= require spree/frontend/spree_admin_insights
 */
 /* .hidden { display: none; }  *= require spree/frontend/spree_social
  *= require spree/frontend/spree_paymaya
  *= require store/spree_favorite_products
  *= require spree/frontend/spree_searchkick
  *= require spree/frontend/spree_digital_assets
+ *= require spree/frontend/spree_one_page_stock_management
+ *= require spree/frontend/spree_events_tracker
+ *= require spree/frontend/spree_admin_insights
 */

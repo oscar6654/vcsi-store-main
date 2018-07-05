@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180704062237) do
+ActiveRecord::Schema.define(version: 20180705070611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -167,6 +167,40 @@ ActiveRecord::Schema.define(version: 20180704062237) do
     t.index ["calculable_id", "calculable_type"], name: "index_spree_calculators_on_calculable_id_and_calculable_type", using: :btree
     t.index ["deleted_at"], name: "index_spree_calculators_on_deleted_at", using: :btree
     t.index ["id", "type"], name: "index_spree_calculators_on_id_and_type", using: :btree
+  end
+
+  create_table "spree_cart_events", force: :cascade do |t|
+    t.string   "actor_type"
+    t.integer  "actor_id"
+    t.string   "target_type"
+    t.integer  "target_id"
+    t.string   "activity"
+    t.text     "referrer"
+    t.integer  "quantity"
+    t.decimal  "total",       precision: 16, scale: 4
+    t.string   "session_id"
+    t.integer  "variant_id"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.index ["actor_type", "actor_id"], name: "index_spree_cart_events_on_actor_type_and_actor_id", using: :btree
+    t.index ["target_type", "target_id"], name: "index_spree_cart_events_on_target_type_and_target_id", using: :btree
+    t.index ["variant_id"], name: "index_spree_cart_events_on_variant_id", using: :btree
+  end
+
+  create_table "spree_checkout_events", force: :cascade do |t|
+    t.string   "actor_type"
+    t.integer  "actor_id"
+    t.string   "target_type"
+    t.integer  "target_id"
+    t.string   "activity"
+    t.text     "referrer"
+    t.string   "previous_state"
+    t.string   "next_state"
+    t.string   "session_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["actor_type", "actor_id"], name: "index_spree_checkout_events_on_actor_type_and_actor_id", using: :btree
+    t.index ["target_type", "target_id"], name: "index_spree_checkout_events_on_target_type_and_target_id", using: :btree
   end
 
   create_table "spree_commission_rules", force: :cascade do |t|
@@ -430,6 +464,22 @@ ActiveRecord::Schema.define(version: 20180704062237) do
     t.index ["ship_address_id"], name: "index_spree_orders_on_ship_address_id", using: :btree
     t.index ["store_id"], name: "index_spree_orders_on_store_id", using: :btree
     t.index ["user_id", "created_by_id"], name: "index_spree_orders_on_user_id_and_created_by_id", using: :btree
+  end
+
+  create_table "spree_page_events", force: :cascade do |t|
+    t.string   "actor_type"
+    t.integer  "actor_id"
+    t.string   "target_type"
+    t.integer  "target_id"
+    t.string   "activity"
+    t.text     "referrer"
+    t.string   "search_keywords"
+    t.string   "session_id"
+    t.text     "query_string"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["actor_type", "actor_id"], name: "index_spree_page_events_on_actor_type_and_actor_id", using: :btree
+    t.index ["target_type", "target_id"], name: "index_spree_page_events_on_target_type_and_target_id", using: :btree
   end
 
   create_table "spree_payment_capture_events", force: :cascade do |t|

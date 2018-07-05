@@ -25,3 +25,5 @@
 
 //= require spree/frontend/spree_favorite_products
 //= require spree/frontend/spree_searchkick
+//= require spree/frontend/spree_events_tracker
+//= require spree/frontend/spree_admin_insights

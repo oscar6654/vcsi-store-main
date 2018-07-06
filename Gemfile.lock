@@ -86,7 +86,7 @@ GIT
 
 GIT
   remote: git://github.com/oscar6654/spree_searchkick.git
-  revision: a0e2c078aa3ce576c09f85289197d70abe41c014
+  revision: 4b8a9eafa8d51355eef41d612c87e009fbcb9d19
   specs:
     spree_searchkick (3.1.0)
       searchkick

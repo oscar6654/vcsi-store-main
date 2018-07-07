@@ -6,7 +6,12 @@ module Spree
         @taxon = Spree::Taxon.find_by!(slug: params[:id])
         @products = Spree::Product.in_sale.in_taxon(@taxon)
       else
-        @products = Spree::Product.in_sale
+        #@products = Spree::Product.in_sale
+        
+        @searcher = build_searcher(params.merge(include_images: true))
+        @products = @searcher.retrieve_products
+        @products = @products.includes(:possible_promotions) if @products.respond_to?(:includes)
+        @products = @products.in_sale
       end
       @taxonomies = Spree::Taxonomy.includes(root: :children)
     end

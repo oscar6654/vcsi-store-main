@@ -11,7 +11,8 @@ module Spree
         @searcher = build_searcher(params.merge(include_images: true))
         @products = @searcher.retrieve_products
         @products = @products.includes(:possible_promotions) if @products.respond_to?(:includes)
-        @products = @products.in_sale
+        @products = @products.joins(master: :sale_prices)
+                          .where(spree_sale_prices: {enabled: true})
       end
       @taxonomies = Spree::Taxonomy.includes(root: :children)
     end

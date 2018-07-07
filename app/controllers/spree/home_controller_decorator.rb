@@ -7,6 +7,7 @@ module Spree
         @products = Spree::Product.in_sale.in_taxon(@taxon)
       else
         @products = Spree::Product.in_sale
+        @products = @products.page(params[:page]).per(12)
         
         #@searcher = build_searcher(params.merge(include_images: true))
         #@products = @searcher.retrieve_products

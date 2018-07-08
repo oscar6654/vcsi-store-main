@@ -404,7 +404,7 @@ module Spree
     end
 
     def create_store_credits(referrer)
-      referrer.store_credits.create(amount: referral_amount(referrer),
+      referrer.store_credits.create(amount: 2.0,
                                     category_id: referral_store_credit_category.try(:id),
                                     created_by: Spree::User.admin.try(:first),
                                     currency: Spree::Config.currency)

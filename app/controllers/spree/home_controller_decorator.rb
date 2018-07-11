@@ -7,8 +7,6 @@ module Spree
         @products = Spree::Product.in_sale.in_taxon(@taxon)
       else
         @products = Spree::Product.in_sale
-        binding.pry
-        @products.where(discontinued: nil)
         @products.where('discontinue_on is null OR discontinue_on > ?', Time.now)
         @products = @products.page(params[:page]).per(12)
 

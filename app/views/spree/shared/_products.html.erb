@@ -42,8 +42,7 @@
                     <%= display_original_price(product) %>
                   </span>
                   <span style="font-size: 11px; color: #757575;">
-                    <%= (display_price(product)[1..-1].to_f / display_original_price(product)[1..-1].to_f) %>
-                    <%= (display_price(product)[1..-1].to_f / display_original_price(product)[1..-1].to_f) * 100 %>
+                    <%= (display_price(product)[1..-1].to_f %>
                     <%= number_to_percentage((display_price(product)[1..-1].to_f / display_original_price(product)[1..-1].to_f) * 100, precision: 0) %>
                   </span>
                 <% end %>

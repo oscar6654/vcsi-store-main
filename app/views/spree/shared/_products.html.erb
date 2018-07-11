@@ -42,13 +42,10 @@
                     <%= display_original_price(product) %>
                   </span>
                   <span style="font-size: 11px; color: #757575;">
-                    <!-- <%= display_price(product).to_s %>! -->
-                    <!-- <%= display_price(product).to_s %>!
-                    <%= display_price(product).to_s[1..-1] %>! -->
-                    <%= display_price(product).to_s.split(";")[-1] %>!
+                    <!-- <%= display_price(product).to_s.split(";")[-1] %>!
                     <%= display_original_price(product).to_s.split(";")[-1] %>!
-                    <%= display_original_price(product).to_s.split(";") %>!
-                    <%= number_to_percentage(( 1 - (display_price(product).to_s.split(";")[-1].to_f / display_original_price(product).to_s.split(";")[-1].to_f)).round(2) * 100, precision: 0) %>
+                    <%= display_original_price(product).to_s.split(";") %>! -->
+                    <%= number_to_percentage(( 1 - (display_price(product).to_s.split(";")[-1].gsub(/\,/,"").to_f / display_original_price(product).to_s.split(";")[-1].gsub(/\,/,"").to_f)).round(2) * 100, precision: 0) %>
                   </span>
                 <% end %>
               </div>

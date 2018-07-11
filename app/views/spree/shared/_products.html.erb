@@ -44,6 +44,7 @@
                   <span style="font-size: 11px; color: #757575;">
                     <!-- <%= display_price(product).to_s %>! -->
                     <%= display_price(product).to_s[1..-1].split(";")[1].to_f %>!
+                    <%= display_original_price.to_s[1..-1].split(";")[1].to_f %>!
                     <!-- <%= number_to_percentage((display_price(product).to_s[1..-1].split(";")[1].to_f / display_original_price(product).to_s[1..-1].split(";")[1].to_f) * 100, precision: 0) %> -->
                   </span>
                 <% end %>

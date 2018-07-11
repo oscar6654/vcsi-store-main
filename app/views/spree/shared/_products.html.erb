@@ -42,7 +42,10 @@
                     <%= display_original_price(product) %>
                   </span>
                   <span style="font-size: 11px; color: #757575;">
-                    <%= number_to_percentage((display_price(product).split("₱")[1].to_f / display_original_price(product).split("₱")[1].to_f) * 100, precision: 0) %>
+                    <%= display_price(product).split("₱")[1] %>
+                    <%= display_price(product).to_s %>
+                    <%= display_price(product).to_s[1..-1] %>
+                    <!-- <%= number_to_percentage((display_price(product).split("₱")[1].to_f / display_original_price(product).split("₱")[1].to_f) * 100, precision: 0) %> -->
                   </span>
                 <% end %>
               </div>

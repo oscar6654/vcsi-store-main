@@ -12,8 +12,6 @@
 <% elsif @order.could_use_store_credit? %>
   <div class="alert alert-info text-center" data-hook="checkout_payment_store_credit_available">
     <h2><%= Spree.t('store_credit.available_amount', amount: @order.display_total_available_store_credit) %></h2>
-    <b>STORE CREDITS CAN ONLY BE USED VIA CASH ON DELIVERY</b>
-    <b>Amount </b>
     <br/>
     <%= button_tag Spree.t('store_credit.apply'), name: 'apply_store_credit', class: 'continue btn btn-primary' %>
   </div>

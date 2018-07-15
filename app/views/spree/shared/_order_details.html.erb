@@ -37,9 +37,9 @@
       <div class="checkout-order-details-block">
         <h4 class="section-subtitle"><%= Spree.t(:payment_information) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:payment) unless order.completed? %></h4>
         <div class="payment-info">
-          <% order.payments.valid.each do |payment| %>
-            <%= render payment %><br/>
-          <% end %>
+          <!-- <% order.payments.valid.each do |payment| %> -->
+            <%= render order.payments.valid.last %><br/>
+          <!-- <% end %> -->
         </div>
       </div>
     </div>

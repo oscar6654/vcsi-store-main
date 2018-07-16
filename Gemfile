@@ -44,6 +44,8 @@ gem 'searchkick'
 gem 'spree_searchkick', github: 'oscar6654/spree_searchkick'
 gem 'spree_events_tracker', github: 'vinsol-spree-contrib/spree_events_tracker', branch: '3-2-stable'
 gem 'spree_admin_insights', git: 'https://github.com/vinsol-spree-contrib/spree-admin-insights', branch: 'master'
+gem 'spree_quotes_management', github: 'oscar6654/spree-quotes-management'
+
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'

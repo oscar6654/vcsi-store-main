@@ -41,6 +41,15 @@ GIT
       zip-zip
 
 GIT
+  remote: git://github.com/oscar6654/spree-quotes-management.git
+  revision: 8d56859a3f23d06a8b581a21f5d56e0e56880e5f
+  specs:
+    spree_quotes_management (3.3.0)
+      spree_core (>= 3.2.0, < 4.0)
+      spree_extension
+      state_machines-activerecord (~> 0.5.0)
+
+GIT
   remote: git://github.com/oscar6654/spree_ajax_add_to_cart.git
   revision: a070496dc624c0d248ed3f9b4a653509523c12b3
   branch: 3-2-stable
@@ -786,6 +795,7 @@ DEPENDENCIES
   spree_paymaya!
   spree_paypal_express!
   spree_print_invoice!
+  spree_quotes_management!
   spree_reffiliate!
   spree_sales!
   spree_searchkick!

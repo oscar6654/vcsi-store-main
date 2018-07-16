@@ -24,6 +24,7 @@
 
  *= require spree/frontend/spree_events_tracker
  *= require spree/frontend/spree_admin_insights
+ *= require spree/frontend/spree_quotes_management
 */
 
 .old-price {
@@ -39,6 +40,7 @@
  *= require spree/frontend/spree_one_page_stock_management
  *= require spree/frontend/spree_events_tracker
  *= require spree/frontend/spree_admin_insights
+ *= require spree/frontend/spree_quotes_management
 */
 .terms_and_conditions_box {
   padding: 15px;
@@ -62,6 +64,7 @@
  *= require spree/frontend/spree_one_page_stock_management
  *= require spree/frontend/spree_events_tracker
  *= require spree/frontend/spree_admin_insights
+ *= require spree/frontend/spree_quotes_management
 */
   padding: .2em .2em 0;
 }
@@ -99,6 +102,7 @@
  *= require spree/frontend/spree_one_page_stock_management
  *= require spree/frontend/spree_events_tracker
  *= require spree/frontend/spree_admin_insights
+ *= require spree/frontend/spree_quotes_management
 */
 /* .bt_payment_form table { border-collapse: inherit; }  *= require spree/frontend/spree_social
  *= require spree/frontend/spree_paymaya
@@ -108,6 +112,7 @@
  *= require spree/frontend/spree_one_page_stock_management
  *= require spree/frontend/spree_events_tracker
  *= require spree/frontend/spree_admin_insights
+ *= require spree/frontend/spree_quotes_management
 */
 /* .bt_payment_form [type="submit"] { margin-left: 10px; }  *= require spree/frontend/spree_social
  *= require spree/frontend/spree_paymaya
@@ -117,6 +122,7 @@
  *= require spree/frontend/spree_one_page_stock_management
  *= require spree/frontend/spree_events_tracker
  *= require spree/frontend/spree_admin_insights
+ *= require spree/frontend/spree_quotes_management
 */
 /* .bt_payment_form input[type="text"], .bt_payment_form input[type="date"] { width: 138px; }  *= require spree/frontend/spree_social
  *= require spree/frontend/spree_paymaya
@@ -126,6 +132,7 @@
  *= require spree/frontend/spree_one_page_stock_management
  *= require spree/frontend/spree_events_tracker
  *= require spree/frontend/spree_admin_insights
+ *= require spree/frontend/spree_quotes_management
 */
 /* .hidden { display: none; }  *= require spree/frontend/spree_social
  *= require spree/frontend/spree_paymaya
@@ -135,4 +142,5 @@
  *= require spree/frontend/spree_one_page_stock_management
  *= require spree/frontend/spree_events_tracker
  *= require spree/frontend/spree_admin_insights
+ *= require spree/frontend/spree_quotes_management
 */

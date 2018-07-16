@@ -22,3 +22,4 @@
 //= require spree/backend/spree_searchkick
 //= require spree/backend/spree_events_tracker
 //= require spree/backend/spree_admin_insights
+//= require spree/backend/spree_quotes_management

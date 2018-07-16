@@ -37,30 +37,10 @@
       <div class="checkout-order-details-block">
         <h4 class="section-subtitle"><%= Spree.t(:payment_information) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:payment) unless order.completed? %></h4>
         <div class="payment-info">
-          <!-- <% order.payments.valid.each do |payment| %> -->
-            <!-- <%= render order.payments.valid.last %><br/> -->
-          <!-- <% end %> -->
-
-          <% source = order.payments.valid.last.source %>
-
-          <% if source.is_a?(Spree::CreditCard) %>
-            <span class="cc-type">
-              <% unless (cc_type = source.cc_type).blank? %>
-                <%= image_tag "credit_cards/icons/#{cc_type}.png" %>
-              <% end %>
-              <% if source.last_digits %>
-                <%= Spree.t(:ending_in) %> <%= source.last_digits %>
-              <% end %>
-            </span>
-            <br />
-            <span class="full-name"><%= source.name %></span>
-          <% else %>
-            <%= content_tag(:span, order.payments.valid.last.payment_method.name) %>
+          <% order.payments.valid.where('state = ? OR state = ?', "completed", "checkout").each do |payment| %>
+            <%= render payment %><br/>
           <% end %>
 
-          <span class="payment-amount">(<%= order.payments.valid.last.display_amount %>)</span>
-
-          <br />
 
         </div>
       </div>

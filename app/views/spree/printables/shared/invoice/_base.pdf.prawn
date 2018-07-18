@@ -33,12 +33,12 @@ prawn_document(force_download: true) do |pdf|
 
     pdf.text Spree::PrintInvoice::Config[:return_message], align: :right, size: font_style[:size]
   end
-
   # Footer
-  # if Spree::PrintInvoice::Config[:use_footer]
+  if Spree::PrintInvoice::Config[:use_footer]
+    puts "I AM TRUE"
     render 'spree/printables/shared/footer', pdf: pdf
-  # end
-
+  end
+  puts "I AM FALSE"
   # Page Number
   if Spree::PrintInvoice::Config[:use_page_numbers]
     render 'spree/printables/shared/page_number', pdf: pdf

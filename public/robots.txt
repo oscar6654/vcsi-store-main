@@ -7,3 +7,5 @@ Disallow: /user
 Disallow: /account
 Disallow: /api
 Disallow: /password
+Sitemap: https://www.vcsi.com.ph/sitemap.xml.gz
+Sitemap: http://www.vcsi.com.ph/sitemap.xml.gz

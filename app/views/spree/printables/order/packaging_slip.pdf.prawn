@@ -1,5 +1,5 @@
 @font_style = {
-  face: Spree::PrintInvoice::Config[:font_face],
+  face: "Courier",
   size: Spree::PrintInvoice::Config[:font_size]
 }
 

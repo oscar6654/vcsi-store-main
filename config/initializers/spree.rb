@@ -10,6 +10,7 @@
 # In order to initialize a setting do:
 # config.setting_name = 'new value'
 require 'lib/spree/product_filters'
+require 'lib/spree/print_invoice_setting'
 Spree.config do |config|
   # Example:
   # Uncomment to stop tracking inventory levels in the application
@@ -27,7 +28,7 @@ Spree.config do |config|
 end
 
 Spree.user_class = "Spree::User"
-
+Spree::PrintInvoice::Config[:font_face] = "Courier"
 if ActiveRecord::Base.connection.data_source_exists? 'spree_authentication_methods'
   Spree::AuthenticationMethod.where(environment: Rails.env, provider: 'facebook').first_or_create do |auth_method|
     auth_method.api_key = ENV['FACEBOOK_APP_ID']

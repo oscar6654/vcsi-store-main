@@ -46,8 +46,7 @@ module Spree
       options  = params[:options] || {}
 
       # 2,147,483,647 is crazy. See issue #2695.
-      # binding.pry
-      if quantity.between?(1, 100)
+      if quantity.between?(1, 2_147_483_647)
         begin
           order.contents.add(variant, quantity, options)
           order.update_line_item_prices!
@@ -57,19 +56,12 @@ module Spree
           error = e.record.errors.full_messages.join(', ')
         end
       else
-        # binding.pry
         error = Spree.t(:please_enter_reasonable_quantity)
       end
 
       if error
-        # binding.pry
-        # flash[:error] = error
-        # redirect_back_or_default(spree.root_path)
-        respond_to do |format|
-          # This call will search for action success, if not present, it will call the template named success.js
-          # Note - success.js is created in step 3
-          format.js { render :action => 'success' }
-        end
+        flash[:error] = error
+        redirect_back_or_default(spree.root_path)
       else
         respond_with(order) do |format|
           format.html { redirect_to(cart_path(variant_id: variant.id)) }

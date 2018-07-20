@@ -2,20 +2,20 @@
 totals = []
 
 # Subtotal
-totals << [pdf.make_cell(content: Spree.t(:subtotal)), invoice.display_item_total.to_s]
+totals << [pdf.make_cell(content: Spree.t(:subtotal)), invoice.display_item_total.to_s[1..-1]]
 
 # Adjustments
 invoice.adjustments.each do |adjustment|
-  totals << [pdf.make_cell(content: adjustment.label), adjustment.display_amount.to_s]
+  totals << [pdf.make_cell(content: adjustment.label), adjustment.display_amount.to_s[1..-1]]
 end
 
 # Shipments
 invoice.shipments.each do |shipment|
-  totals << [pdf.make_cell(content: shipment.shipping_method.name), shipment.display_cost.to_s]
+  totals << [pdf.make_cell(content: shipment.shipping_method.name), shipment.display_cost.to_s[1..-1]]
 end
 
 # Totals
-totals << [pdf.make_cell(content: Spree.t(:order_total)), invoice.display_total.to_s]
+totals << [pdf.make_cell(content: Spree.t(:order_total)), invoice.display_total.to_s[1..-1]]
 
 # Payments
 total_payments = 0.0
@@ -28,7 +28,7 @@ invoice.payments.each do |payment|
       date: I18n.l(payment.updated_at.to_date, format: :long),
       scope: :print_invoice)
     ),
-    payment.display_amount.to_s
+    payment.display_amount.to_s[1..-1]
   ]
   total_payments += payment.amount
 end

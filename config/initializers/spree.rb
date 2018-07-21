@@ -19,7 +19,7 @@ Spree.config do |config|
   Spree::Config[:auto_capture_on_dispatch] = true
   # country = Spree::Country.find_by_name('Philippines')
   # config.default_country_id = country.id if country.present?
-  # config.allow_guest_checkout = false
+  config.allow_guest_checkout = true
   # Custom logo for the frontend
   config.logo = "logo/vcsi.png"
   # Custom logo for the admin

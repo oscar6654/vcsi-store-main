@@ -394,12 +394,13 @@ module Spree
     end
 
     def create_commission_transaction!
-      # binding.pry
-      if user.referred_record != nil
-        referred = Spree::Referral.where('lower(code) = ?', user.referred_record.referral.code.downcase).first
-        # binding.pry
-        store_credit = create_store_credits(referred.user)
-        #if referrer_eligible?(referred.user)
+      if user != nil
+        if user.referred_record != nil
+          referred = Spree::Referral.where('lower(code) = ?', user.referred_record.referral.code.downcase).first
+          # binding.pry
+          store_credit = create_store_credits(referred.user)
+          #if referrer_eligible?(referred.user)
+        end
       end
     end
 

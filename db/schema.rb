@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180716024652) do
+ActiveRecord::Schema.define(version: 20180725030842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -201,6 +201,27 @@ ActiveRecord::Schema.define(version: 20180716024652) do
     t.datetime "updated_at",     null: false
     t.index ["actor_type", "actor_id"], name: "index_spree_checkout_events_on_actor_type_and_actor_id", using: :btree
     t.index ["target_type", "target_id"], name: "index_spree_checkout_events_on_target_type_and_target_id", using: :btree
+  end
+
+  create_table "spree_comment_types", force: :cascade do |t|
+    t.string   "name"
+    t.string   "applies_to"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_comments", force: :cascade do |t|
+    t.string   "title",            limit: 50
+    t.text     "comment"
+    t.string   "commentable_type"
+    t.integer  "commentable_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "comment_type_id"
+    t.index ["commentable_id"], name: "index_spree_comments_on_commentable_id", using: :btree
+    t.index ["commentable_type"], name: "index_spree_comments_on_commentable_type", using: :btree
+    t.index ["user_id"], name: "index_spree_comments_on_user_id", using: :btree
   end
 
   create_table "spree_commission_rules", force: :cascade do |t|

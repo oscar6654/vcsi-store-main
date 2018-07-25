@@ -21,9 +21,9 @@ Spree.config do |config|
   # config.default_country_id = country.id if country.present?
   config.allow_guest_checkout = true
   # Custom logo for the frontend
-  config.logo = "logo/vcsi.png"
+  config.logo = "logo/qsj.png"
   # Custom logo for the admin
-  config.admin_interface_logo = "logo/VCSI-logo-trans.png"
+  config.admin_interface_logo = "logo/qsj.png"
   config.products_per_page = 12
 end
 

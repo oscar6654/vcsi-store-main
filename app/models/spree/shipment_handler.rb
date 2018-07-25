@@ -33,12 +33,12 @@ module Spree
     require 'chikka'
     def update_order_shipment_state
       order = @shipment.order
-      if @shipment.order.ship_address.phone.length > 10
-        @phone = @shipment.order.ship_address.phone.chars.last(10).join
-        @phone = "63" + @phone
-        client = Chikka::Client.new(client_id:ENV["CHIKKA_CLIENT_ID"], secret_key:ENV["CHIKKA_SECRET_KEY"], shortcode:ENV["CHIKKA_SHORT_CODE"])
-        client.send_message(message:'(VCSI Store) Your order is being packed up and will be delivered tomorrow. *DO NOT REPLY', mobile_number: @phone)
-      end
+      # if @shipment.order.ship_address.phone.length > 10
+      #   @phone = @shipment.order.ship_address.phone.chars.last(10).join
+      #   @phone = "63" + @phone
+      #   client = Chikka::Client.new(client_id:ENV["CHIKKA_CLIENT_ID"], secret_key:ENV["CHIKKA_SECRET_KEY"], shortcode:ENV["CHIKKA_SHORT_CODE"])
+      #   client.send_message(message:'(VCSI Store) Your order is being packed up and will be delivered tomorrow. *DO NOT REPLY', mobile_number: @phone)
+      # end
       new_state = OrderUpdater.new(order).update_shipment_state
       order.update_columns(shipment_state: new_state, updated_at: Time.current)
     end

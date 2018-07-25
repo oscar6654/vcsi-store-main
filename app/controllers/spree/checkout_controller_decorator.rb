@@ -20,11 +20,11 @@ Spree::CheckoutController.class_eval do
         @current_order = nil
         flash.notice = Spree.t(:order_processed_successfully)
         flash['order_completed'] = true
-        notifier_order = Slack::Notifier.new "https://hooks.slack.com/services/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" do
-          defaults channel: "#orders",
-                   username: "VCSI Order BOT"
-        end
-        notifier_order.ping "#{@order.name} created an Order."
+        # notifier_order = Slack::Notifier.new "https://hooks.slack.com/services/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" do
+        #   defaults channel: "#orders",
+        #            username: "VCSI Order BOT"
+        # end
+        # notifier_order.ping "#{@order.name} created an Order."
         redirect_to completion_route
       else
         redirect_to checkout_state_path(@order.state)

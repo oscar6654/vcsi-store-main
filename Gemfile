@@ -47,6 +47,7 @@ gem 'spree_admin_insights', git: 'https://github.com/vinsol-spree-contrib/spree-
 gem 'spree_quotes_management', github: 'oscar6654/spree-quotes-management'
 gem 'spree_sitemap', github: 'spree-contrib/spree_sitemap'
 gem 'whenever', require: false
+gem "spree_comments", github: 'spree-contrib/spree_comments'
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'

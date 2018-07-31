@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180716024652) do
+ActiveRecord::Schema.define(version: 20180731025418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -203,6 +203,27 @@ ActiveRecord::Schema.define(version: 20180716024652) do
     t.index ["target_type", "target_id"], name: "index_spree_checkout_events_on_target_type_and_target_id", using: :btree
   end
 
+  create_table "spree_comment_types", force: :cascade do |t|
+    t.string   "name"
+    t.string   "applies_to"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_comments", force: :cascade do |t|
+    t.string   "title",            limit: 50
+    t.text     "comment"
+    t.string   "commentable_type"
+    t.integer  "commentable_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "comment_type_id"
+    t.index ["commentable_id"], name: "index_spree_comments_on_commentable_id", using: :btree
+    t.index ["commentable_type"], name: "index_spree_comments_on_commentable_type", using: :btree
+    t.index ["user_id"], name: "index_spree_comments_on_user_id", using: :btree
+  end
+
   create_table "spree_commission_rules", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -367,6 +388,63 @@ ActiveRecord::Schema.define(version: 20180716024652) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["source_id", "source_type"], name: "index_spree_log_entries_on_source_id_and_source_type", using: :btree
+  end
+
+  create_table "spree_marketing_campaigns", force: :cascade do |t|
+    t.string   "uid",            null: false
+    t.string   "mailchimp_type"
+    t.string   "name"
+    t.text     "stats"
+    t.integer  "list_id"
+    t.datetime "scheduled_at"
+    t.index ["list_id"], name: "index_spree_marketing_campaigns_on_list_id", using: :btree
+    t.index ["mailchimp_type"], name: "index_spree_marketing_campaigns_on_mailchimp_type", using: :btree
+  end
+
+  create_table "spree_marketing_contacts", force: :cascade do |t|
+    t.string   "mailchimp_id"
+    t.string   "uid",                         null: false
+    t.string   "email",                       null: false
+    t.boolean  "active",       default: true, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.index ["active", "email"], name: "index_spree_marketing_contacts_on_active_and_email", using: :btree
+    t.index ["email"], name: "index_spree_marketing_contacts_on_email", using: :btree
+  end
+
+  create_table "spree_marketing_contacts_lists", force: :cascade do |t|
+    t.integer  "contact_id"
+    t.integer  "list_id"
+    t.boolean  "active",     default: true, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["active"], name: "index_spree_marketing_contacts_lists_on_active", using: :btree
+    t.index ["contact_id"], name: "index_spree_marketing_contacts_lists_on_contact_id", using: :btree
+    t.index ["list_id", "contact_id"], name: "index_spree_marketing_contacts_lists_on_list_id_and_contact_id", using: :btree
+  end
+
+  create_table "spree_marketing_lists", force: :cascade do |t|
+    t.string   "uid",                             null: false
+    t.string   "name"
+    t.boolean  "active",           default: true, null: false
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "entity_type"
+    t.integer  "entity_id"
+    t.string   "searched_keyword"
+    t.datetime "deleted_at"
+    t.index ["active", "name"], name: "index_spree_marketing_lists_on_active_and_name", using: :btree
+    t.index ["name"], name: "index_spree_marketing_lists_on_name", using: :btree
+  end
+
+  create_table "spree_marketing_recipients", force: :cascade do |t|
+    t.integer  "campaign_id"
+    t.integer  "contact_id"
+    t.datetime "email_opened_at"
+    t.index ["campaign_id"], name: "index_spree_marketing_recipients_on_campaign_id", using: :btree
+    t.index ["contact_id"], name: "index_spree_marketing_recipients_on_contact_id", using: :btree
   end
 
   create_table "spree_option_type_prototypes", force: :cascade do |t|

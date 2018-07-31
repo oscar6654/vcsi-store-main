@@ -22,3 +22,9 @@
 every 1.day, at: '5:00 am' do
   rake '-s sitemap:refresh'
 end
+
+
+every 1.day, :at => '12:01 am' do
+  rake 'spree_marketing:smart_list:generate'
+  rake 'spree_marketing:smart_list:campaign:sync'
+end

@@ -31,13 +31,33 @@ module Spree
       ShipmentMailer.shipped_email(@shipment.id).deliver_later
     end
     require 'chikka'
+    require 'httparty'
+    require 'addressable/uri'
+
+    def send_message(message: nil, number: nil)
+      uri     = Addressable::URI.new
+
+      options = {
+        apikey:     ENV['SEMAPHORE_API_KEY'],
+        number:     number,
+        message:    message,
+        sendername: ENV['SEMAPHORE_SENDERNAME']
+      }
+
+      uri.query_values = options
+      path = "http://api.semaphore.co/api/v4/messages?#{uri.query}"
+
+      response = HTTParty.post(path)
+    end
+
     def update_order_shipment_state
       order = @shipment.order
       if @shipment.order.ship_address.phone.length > 10
         @phone = @shipment.order.ship_address.phone.chars.last(10).join
-        @phone = "63" + @phone
-        client = Chikka::Client.new(client_id:ENV["CHIKKA_CLIENT_ID"], secret_key:ENV["CHIKKA_SECRET_KEY"], shortcode:ENV["CHIKKA_SHORT_CODE"])
-        client.send_message(message:'(VCSI Store) Your order is being packed up and will be delivered tomorrow. *DO NOT REPLY', mobile_number: @phone)
+        @phone = "0" + @phone
+        send_message(message: "We are delivering your order #{order.number} to you today via VCSI Delivery. Please prepare cash for payment if via COD. Thank You.", number: @phone)
+        # client = Chikka::Client.new(client_id:ENV["CHIKKA_CLIENT_ID"], secret_key:ENV["CHIKKA_SECRET_KEY"], shortcode:ENV["CHIKKA_SHORT_CODE"])
+        # client.send_message(message:'(VCSI Store) Your order is being packed up and will be delivered tomorrow. *DO NOT REPLY', mobile_number: @phone)
       end
       new_state = OrderUpdater.new(order).update_shipment_state
       order.update_columns(shipment_state: new_state, updated_at: Time.current)

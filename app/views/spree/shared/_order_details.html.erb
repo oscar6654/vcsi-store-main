@@ -107,7 +107,7 @@
     <tfoot id="order-total" data-hook="order_details_total">
       <tr class="cart-total-row">
         <td colspan="4" align="right" class="cart-total-text"><b><%= Spree.t(:order_total) %>:</b></td>
-        <td class="cart-total-block"><span id="order_total"><%= order.display_total.to_html %></span></td>
+        <td class="cart-total-block"><span id="order_total"><%= order.order_total_after_store_credit %></span></td>
       </tr>
     </tfoot>
 

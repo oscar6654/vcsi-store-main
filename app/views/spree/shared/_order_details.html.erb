@@ -41,6 +41,7 @@
             <% order.payments.valid.where(state: "completed").each do |payment| %>
               <%= render payment %><br/>
             <% end %>
+            <%= content_tag(:span, order.payments.valid.last.payment_method.name) %>
           <% else %>
             <% source = order.payments.valid.last.source %>
             <% if source.is_a?(Spree::CreditCard) %>

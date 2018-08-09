@@ -4,7 +4,7 @@
   <% spree_current_user.store_credits.each do |credit| %>
     <% @data += credit.amount.to_f %>
   <% end %>
-  <li class="header-top-nav">Available Credits: <%= @database %></li>
+  <li class="header-top-nav">Available Credits: <%= @data %></li>
   <% else %>
   <li class="header-top-nav">Available Credits: 0</li>
   <% end %>

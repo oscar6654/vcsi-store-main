@@ -1,6 +1,10 @@
 <% if spree_current_user %>
   <% if !spree_current_user.store_credits.first.nil? %>
-  <li class="header-top-nav">Available Credits: <%= spree_current_user.store_credits.first.amount.to_f %></li>
+  <% @data = 0 %>
+  <% spree_current_user.store_credits.each do |credit| %>
+    <% @data += credit.amount.to_f %>
+  <% end %>
+  <li class="header-top-nav">Available Credits: <%= @database %></li>
   <% else %>
   <li class="header-top-nav">Available Credits: 0</li>
   <% end %>

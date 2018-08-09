@@ -1,4 +1,9 @@
 <% if spree_current_user %>
+  <% if !spree_current_user.store_credits.first.nil? %>
+  <li class="header-top-nav">Available Credits: <%= spree_current_user.store_credits.first.amount.to_f %></li>
+  <% else %>
+  <li class="header-top-nav">Available Credits: 0</li>
+  <% end %>
   <li class="header-top-nav"><%= link_to Spree.t(:my_account), spree.account_path, class: 'header-top-nav-link' %></li>
   <li class="header-top-nav"><%= link_to Spree.t(:logout), spree.logout_path, class: 'header-top-nav-link' %></li>
 <% else %>

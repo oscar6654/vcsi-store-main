@@ -113,11 +113,11 @@ Spree::User.class_eval do
       end
 
       def update_user_on_intercom
-        Spree::Intercom::UpdateUserJob.perform_later(id)
+        # Spree::Intercom::UpdateUserJob.perform_later(id)
       end
 
       def user_intercom_attributes_changed?
-        [:email, :last_sign_in_ip].any? { |attribute| saved_changes.include?(attribute) }
+        # [:email, :last_sign_in_ip].any? { |attribute| saved_changes.include?(attribute) }
       end
 
 

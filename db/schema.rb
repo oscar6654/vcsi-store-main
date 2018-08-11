@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180731025418) do
+ActiveRecord::Schema.define(version: 20180811033309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1435,9 +1435,11 @@ ActiveRecord::Schema.define(version: 20180731025418) do
     t.integer  "user_group_id"
     t.decimal  "referral_credits"
     t.boolean  "referrer_benefit_enabled",             default: true
+    t.string   "intercom_user_id"
     t.index ["bill_address_id"], name: "index_spree_users_on_bill_address_id", using: :btree
     t.index ["deleted_at"], name: "index_spree_users_on_deleted_at", using: :btree
     t.index ["email"], name: "email_idx_unique", unique: true, using: :btree
+    t.index ["intercom_user_id"], name: "index_spree_users_on_intercom_user_id", unique: true, using: :btree
     t.index ["ship_address_id"], name: "index_spree_users_on_ship_address_id", using: :btree
     t.index ["spree_api_key"], name: "index_spree_users_on_spree_api_key", using: :btree
   end

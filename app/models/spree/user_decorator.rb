@@ -8,6 +8,15 @@ Spree::User.class_eval do
   has_one :affiliate_record, class_name: 'Spree::ReferredRecord'
   has_many :transactions, as: :commissionable, class_name: 'Spree::CommissionTransaction', dependent: :restrict_with_error
 
+  has_secure_token :intercom_user_id
+
+  validates :intercom_user_id, uniqueness: { case_sensitive: false }
+
+  after_commit :create_user_on_intercom, on: :create
+  after_commit :update_user_on_intercom, on: :update, if: :user_intercom_attributes_changed?
+
+
+
   after_create :create_referral
   # after_create :process_referral
   after_create :process_affiliate
@@ -95,4 +104,21 @@ Spree::User.class_eval do
     def referral_store_credit_category
       @store_credit_category ||= Spree::StoreCreditCategory.find_or_create_by(name: Spree::StoreCredit::REFERRAL_STORE_CREDIT_CATEGORY)
     end
+
+
+    private
+
+      def create_user_on_intercom
+        Spree::Intercom::CreateUserJob.perform_later(id)
+      end
+
+      def update_user_on_intercom
+        Spree::Intercom::UpdateUserJob.perform_later(id)
+      end
+
+      def user_intercom_attributes_changed?
+        [:email, :last_sign_in_ip].any? { |attribute| saved_changes.include?(attribute) }
+      end
+
+
 end

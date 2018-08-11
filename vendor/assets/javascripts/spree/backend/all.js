@@ -24,4 +24,4 @@
 //= require spree/backend/spree_admin_insights
 //= require spree/backend/spree_quotes_management
 // require spree/backend/spree_marketing
-//= require spree/backend/spree_intercom
+// require spree/backend/spree_intercom

@@ -49,7 +49,7 @@ gem 'spree_sitemap', github: 'spree-contrib/spree_sitemap'
 gem 'whenever', require: false
 gem "spree_comments", github: 'spree-contrib/spree_comments'
 gem 'httparty'
-gem 'spree_intercom', github: 'vinsol-spree-contrib/spree-intercom'
+# gem 'spree_intercom', github: 'vinsol-spree-contrib/spree-intercom'
  # gem 'spree_marketing', github: 'oscar6654/spree_marketing', branch: '3-2-updated'
 group :development do
   gem 'listen', '~> 3.0.5'

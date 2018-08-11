@@ -29,4 +29,4 @@
 //= require spree/frontend/spree_admin_insights
 //= require spree/frontend/spree_quotes_management
 // require spree/frontend/spree_marketing
-//= require spree/frontend/spree_intercom
+// require spree/frontend/spree_intercom

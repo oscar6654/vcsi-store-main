@@ -62,8 +62,6 @@
         <td><%= Spree.t(:store_credit_name) %>:</strong></td>
         <td><span id='summary-store-credit'><%= order.display_total_applied_store_credit.to_html %></span></td>
       </tr>
-    <%else%>
-    <b>Not using store credits!</b>
     <% end %>
 
     <tr data-hook="order_total">

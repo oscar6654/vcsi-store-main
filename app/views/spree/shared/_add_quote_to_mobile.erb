@@ -10,7 +10,7 @@
           <% end %>
         </ol>
 
-        <div class="carousel-inner owl-carousel" role="listbox" >
+        <div class="carousel-inner owl-carousel2" role="listbox" >
           <% @top_quotes.each_with_index do |quote, index| %>
             <div class="item <%= index == 0 ? 'active' : '' %>">
               <div class="body-carousel" style="" >
@@ -46,7 +46,7 @@
 
 <script>
 
-var owl = $('.owl-carousel');
+var owl = $('.owl-carousel2');
 owl.owlCarousel({
     items:1,
     loop:true,

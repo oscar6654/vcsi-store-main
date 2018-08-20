@@ -26,10 +26,12 @@
       src="https://www.facebook.com/tr?id=422486018272088&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Facebook Pixel Code -->
+    <% if spree_current_user %>
     <!-- BEGIN PRIVY WIDGET CODE -->
     <script type='text/javascript'> var _d_site = _d_site || '6712268A9EE8CFB83F5181D3'; </script>
     <script src='https://widget.privy.com/assets/widget.js'></script>
     <!-- END PRIVY WIDGET CODE -->
+    <% end %>
   </head>
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
     <!-- Load Facebook SDK for JavaScript -->

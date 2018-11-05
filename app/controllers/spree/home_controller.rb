@@ -10,8 +10,8 @@ module Spree
         @products = @searcher.retrieve_products
         @products = @products.includes(:possible_promotions) if @products.respond_to?(:includes)
         # binding.pry
-        # @products = @products.where(featured: true)
-        @products = @products.in_sale
+        @products = @products.where(featured: true)
+        # @products = @products.in_sale
         @taxonomies = Spree::Taxonomy.includes(root: :children)
       else
         # Rails.cache.clear

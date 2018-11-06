@@ -18,6 +18,8 @@
                       <% spree_current_user.store_credits.each do |credit| %>
                         <% if credit.amount_used.to_f == 0.0 %>
                           <% @data += credit.amount.to_f %>
+                        <% else %>
+                          <% @data += (credit.amount.to_f - credit.amount_used.to_f) %>
                         <% end %>
                       <% end %>
                       <li class="header-top-nav">Available Credits: <%= @data %></li>

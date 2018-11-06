@@ -3,10 +3,12 @@
     <% @data = 0 %>
     <% spree_current_user.store_credits.each do |credit| %>
       <% if credit.amount_used.to_f == 0.0 %>
-        <% @data += credit.amount.to_f %>
+          <% @data += credit.amount.to_f %>
+        <% else %>
+          <% @data += (credit.amount.to_f - credit.amount_used.to_f) %>
+        <% end %>
       <% end %>
-    <% end %>
-    <li class="header-top-nav">Available Credits: <%= @data %></li>
+    <li class="header-top-nav">Available Credits: <%= @data.round(2) %></li>
     <% else %>
     <li class="header-top-nav">Available Credits: 0</li>
   <% end %>

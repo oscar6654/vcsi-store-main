@@ -66,7 +66,11 @@
 
     <tr data-hook="order_total">
       <td><strong><%= Spree.t(:order_total) %>:</strong></td>
-      <td><strong><span id='summary-order-total' class="checkout-order-summery-total" data-currency=<%= Money::Currency.find(order.currency).symbol %>><%= order.display_total.to_html %><%= Spree::Money.new(order.order_total_after_store_credit, currency: order.currency).to_html %></span></strong></td>
+      <% if order.using_store_credit? %>
+      <td><strong><span id='summary-order-total' class="checkout-order-summery-total" data-currency=<%= Money::Currency.find(order.currency).symbol %>><%= Spree::Money.new(order.order_total_after_store_credit, currency: order.currency).to_html %></span></strong></td>
+      <% else %>
+      <td><strong><span id='summary-order-total' class="checkout-order-summery-total" data-currency=<%= Money::Currency.find(order.currency).symbol %>><%= order.display_total.to_html %></span></strong></td>
+      <% end %>
     </tr>
 
   </tbody>

@@ -386,7 +386,7 @@ module Spree
       consider_risk
     end
 
-    MINIMUM_ORDER_VALUE = (500).to_i
+    MINIMUM_ORDER_VALUE = (5000).to_i
     def checkout_allowed?
       return :not_empty     unless line_items.count > 0
       return :minimum_value unless total >= MINIMUM_ORDER_VALUE

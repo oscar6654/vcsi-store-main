@@ -3,6 +3,7 @@ require 'spree/order/checkout'
 
 module Spree
   class Order < Spree::Base
+    extend FriendlyId
     PAYMENT_STATES = %w(balance_due credit_owed failed paid void)
     SHIPMENT_STATES = %w(backorder canceled partial pending ready shipped)
 

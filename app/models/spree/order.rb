@@ -6,6 +6,9 @@ module Spree
     PAYMENT_STATES = %w(balance_due credit_owed failed paid void)
     SHIPMENT_STATES = %w(backorder canceled partial pending ready shipped)
 
+    extend FriendlyId
+    friendly_id :number, slug_column: :number, use: :slugged
+    
     include Spree::Order::Checkout
     include Spree::Order::CurrencyUpdater
     include Spree::Order::Payments
@@ -386,7 +389,7 @@ module Spree
       consider_risk
     end
 
-    MINIMUM_ORDER_VALUE = (500).to_i
+    MINIMUM_ORDER_VALUE = (5000).to_i
     def checkout_allowed?
       return :not_empty     unless line_items.count > 0
       return :minimum_value unless total >= MINIMUM_ORDER_VALUE

@@ -52,6 +52,7 @@ gem 'httparty'
 gem 'spree_intercom', github: 'oscar6654/spree-intercom', branch: 'master'
  # gem 'spree_marketing', github: 'oscar6654/spree_marketing', branch: '3-2-updated'
 gem 'turnout'
+gem 'spree_pickup', github: 'vinsol/spree_pickup'
 
 group :development do
   gem 'listen', '~> 3.0.5'

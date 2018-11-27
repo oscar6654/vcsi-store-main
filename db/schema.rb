@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180811033309) do
+ActiveRecord::Schema.define(version: 20181127015743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -529,6 +529,7 @@ ActiveRecord::Schema.define(version: 20180811033309) do
     t.decimal  "non_taxable_adjustment_total",            precision: 10, scale: 2, default: "0.0",   null: false
     t.boolean  "terms_and_conditions"
     t.integer  "affiliate_id"
+    t.integer  "pickup_location_id"
     t.index ["affiliate_id"], name: "index_spree_orders_on_affiliate_id", using: :btree
     t.index ["approver_id"], name: "index_spree_orders_on_approver_id", using: :btree
     t.index ["bill_address_id"], name: "index_spree_orders_on_bill_address_id", using: :btree
@@ -539,6 +540,7 @@ ActiveRecord::Schema.define(version: 20180811033309) do
     t.index ["created_by_id"], name: "index_spree_orders_on_created_by_id", using: :btree
     t.index ["guest_token"], name: "index_spree_orders_on_guest_token", using: :btree
     t.index ["number"], name: "index_spree_orders_on_number", using: :btree
+    t.index ["pickup_location_id"], name: "index_spree_orders_on_pickup_location_id", using: :btree
     t.index ["ship_address_id"], name: "index_spree_orders_on_ship_address_id", using: :btree
     t.index ["store_id"], name: "index_spree_orders_on_store_id", using: :btree
     t.index ["user_id", "created_by_id"], name: "index_spree_orders_on_user_id_and_created_by_id", using: :btree
@@ -642,6 +644,19 @@ ActiveRecord::Schema.define(version: 20180811033309) do
     t.integer "permission_set_id"
     t.index ["permission_id"], name: "index_spree_permissions_permission_sets_on_permission_id", using: :btree
     t.index ["permission_set_id"], name: "index_spree_permissions_permission_sets_on_permission_set_id", using: :btree
+  end
+
+  create_table "spree_pickup_locations", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "address_id"
+    t.string   "phone"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["address_id"], name: "index_spree_pickup_locations_on_address_id", using: :btree
   end
 
   create_table "spree_preferences", force: :cascade do |t|
@@ -1058,12 +1073,13 @@ ActiveRecord::Schema.define(version: 20180811033309) do
     t.string   "name"
     t.string   "display_on"
     t.datetime "deleted_at"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "tracking_url"
     t.string   "admin_name"
     t.integer  "tax_category_id"
     t.string   "code"
+    t.boolean  "pickupable",      default: false
     t.index ["deleted_at"], name: "index_spree_shipping_methods_on_deleted_at", using: :btree
     t.index ["tax_category_id"], name: "index_spree_shipping_methods_on_tax_category_id", using: :btree
   end
@@ -1369,6 +1385,12 @@ ActiveRecord::Schema.define(version: 20180811033309) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.index ["theme_id"], name: "index_spree_themes_templates_on_theme_id", using: :btree
+  end
+
+  create_table "spree_timings", force: :cascade do |t|
+    t.integer "day_id"
+    t.integer "pickup_location_id"
+    t.index ["pickup_location_id"], name: "index_spree_timings_on_pickup_location_id", using: :btree
   end
 
   create_table "spree_trackers", force: :cascade do |t|

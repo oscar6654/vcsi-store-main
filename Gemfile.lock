@@ -232,18 +232,6 @@ GIT
       spree_core (>= 3.2.0, < 4.0.0)
 
 GIT
-  remote: git://github.com/vinsol/spree_pickup.git
-  revision: bfb40043c786a83c5e7c1481cf1e781ccf9d6d7f
-  specs:
-    spree_pickup (3.1.0)
-      geocoder
-      spree_api (>= 3.2.0, < 4.0.0)
-      spree_backend (>= 3.2.0, < 4.0.0)
-      spree_core (>= 3.2.0, < 4.0.0)
-      spree_extension (~> 0.0.5)
-      spree_frontend (>= 3.2.0, < 4.0.0)
-
-GIT
   remote: https://github.com/mzegarek/spree_cash_on_delivery.git
   revision: 9fa23f423b22e1f7df318d6b7b176cda48c3efb0
   branch: master
@@ -426,7 +414,6 @@ GEM
       railties (>= 3.2, < 5.2)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
-    geocoder (1.5.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     hashie (3.5.7)
@@ -866,7 +853,6 @@ DEPENDENCIES
   spree_mail_settings!
   spree_paymaya!
   spree_paypal_express!
-  spree_pickup!
   spree_print_invoice!
   spree_quotes_management!
   spree_reffiliate!

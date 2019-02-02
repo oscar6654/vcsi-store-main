@@ -55,7 +55,7 @@ module Spree
       if @shipment.order.ship_address.phone.length > 10
         @phone = @shipment.order.ship_address.phone.chars.last(10).join
         @phone = "0" + @phone
-        send_message(message: "We are delivering your order #{order.number} to you today via VCSI Delivery. Please prepare cash for payment if via COD. Thank You.", number: @phone)
+        send_message(message: "We are delivering your order #{order.number} to you today via eMarket Delivery. Please prepare cash for payment if via COD. Thank You.", number: @phone)
         # client = Chikka::Client.new(client_id:ENV["CHIKKA_CLIENT_ID"], secret_key:ENV["CHIKKA_SECRET_KEY"], shortcode:ENV["CHIKKA_SHORT_CODE"])
         # client.send_message(message:'(VCSI Store) Your order is being packed up and will be delivered tomorrow. *DO NOT REPLY', mobile_number: @phone)
       end

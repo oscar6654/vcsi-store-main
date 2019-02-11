@@ -51,6 +51,7 @@ gem "spree_comments", github: 'spree-contrib/spree_comments'
 gem 'httparty'
 gem 'spree_intercom', github: 'oscar6654/spree-intercom', branch: 'master'
  # gem 'spree_marketing', github: 'oscar6654/spree_marketing', branch: '3-2-updated'
+gem 'spree_multi_vendor', github: 'spree-contrib/spree_multi_vendor'
 gem 'turnout'
 
 group :development do

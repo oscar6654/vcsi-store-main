@@ -14,5 +14,9 @@ Rails.application.routes.draw do
     get "/terms-conditions" => "terms_conditions#index"
     get "/privacy-policy" => "privacy_policy#index"
     # get "/contact-us" => "contact_us#index"
+    namespace :admin, path: Spree.admin_path do
+      get Spree.admin_path, to: redirect((spree_path + Spree.admin_path + '/orders').gsub('//', '/')), as: :admin
+    end
   end
+
 end

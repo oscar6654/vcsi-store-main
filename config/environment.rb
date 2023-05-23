@@ -17,13 +17,25 @@ Rails.application.initialize!
 #   :tls => true
 # }
 
+# ActionMailer::Base.smtp_settings = {
+#   :user_name => ENV['SENDGRID_USERNAME'],
+#   :password => ENV['SENDGRID_PASSWORD'],
+#   :domain => 'domain.com',
+#   #:domain => 'attendance-reworked.herokuapp.com',
+#   :address => 'smtp.sendgrid.net',
+#   :port => 2525,
+#   :authentication => :plain,
+#   :enable_starttls_auto => true
+# }
+
+
 ActionMailer::Base.smtp_settings = {
-  :user_name => ENV['SENDGRID_USERNAME'],
-  :password => ENV['SENDGRID_PASSWORD'],
-  :domain => 'domain.com',
+  :user_name => 'hr@vcsi.com.ph',
+  :password => 'Ufh0ct1ibe3id+',
+  :domain => 'vcsi.ph',
   #:domain => 'attendance-reworked.herokuapp.com',
-  :address => 'smtp.sendgrid.net',
-  :port => 2525,
-  :authentication => :plain,
+  :address => 'smtp.office365.com',
+  :port => 587,
+  :authentication => :login,
   :enable_starttls_auto => true
 }

@@ -34,22 +34,51 @@ module Spree
     require 'httparty'
     require 'addressable/uri'
 
+#     def send_message(message: nil, number: nil)
+#       uri     = Addressable::URI.new
+
+#       options = {
+#         apikey:     ENV['SEMAPHORE_API_KEY'],
+#         number:     number,
+#         message:    message,
+#         sendername: ENV['SEMAPHORE_SENDERNAME']
+#       }
+
+#       uri.query_values = options
+#       path = "http://api.semaphore.co/api/v4/messages?#{uri.query}"
+
+#       response = HTTParty.post(path)
+#     end
+
+    
+    
     def send_message(message: nil, number: nil)
-      uri     = Addressable::URI.new
+        uri = URI.parse("https://api.m360.com.ph/v3/api/globelabs/mt/L5gHh68TG")
+        request = Net::HTTP::Post.new(uri)
+        request.content_type = "application/json"
+        request.body = JSON.dump({
+        "outboundSMSMessageRequest" => {
+            "clientCorrelator" => "VSI Portal",
+            "mask" => "VSI Portal",
+            "outboundSMSTextMessage" => {
+            "message" => message
+            },
+            "address" => number
+        }
+        })
 
-      options = {
-        apikey:     ENV['SEMAPHORE_API_KEY'],
-        number:     number,
-        message:    message,
-        sendername: ENV['SEMAPHORE_SENDERNAME']
-      }
+        req_options = {
+        use_ssl: uri.scheme == "https",
+        }
 
-      uri.query_values = options
-      path = "http://api.semaphore.co/api/v4/messages?#{uri.query}"
-
-      response = HTTParty.post(path)
+        response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+        http.request(request)
+        end
     end
+  
+  
 
+    
     def update_order_shipment_state
       order = @shipment.order
       if @shipment.order.ship_address.phone.length > 10
